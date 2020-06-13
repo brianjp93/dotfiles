@@ -28,7 +28,6 @@ let mapleader = ","
 set nocompatible              " required
 filetype off                  " required
 set hidden
-set ff=unix
 
 set number
 set autoindent
@@ -46,6 +45,8 @@ nnoremap <leader><space> :nohlsearch<CR>
 inoremap jk <esc>
 
 nmap <silent> <leader>m :MRU<CR>
+tnoremap <Esc> <C-\><C-n>
+tnoremap jk <C-\><C-n>
 
 " markdown conceal off
 let g:vim_markdown_conceal = 0
