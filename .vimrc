@@ -20,6 +20,7 @@ Plug 'vim-python/python-syntax' "python syntax
 Plug 'tpope/vim-unimpaired' "searching easier
 Plug 'vim-scripts/mru.vim' "view recent files
 Plug 'nvie/vim-flake8' "linter
+Plug 'terryma/vim-multiple-cursors'
 "call at end to init vim-plug
 call plug#end()
 
@@ -28,6 +29,18 @@ let mapleader = ","
 set nocompatible              " required
 filetype off                  " required
 set hidden
+
+"multiple curors keybinds
+let g:multi_cursor_use_default_mapping=0
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-x>'
+let g:multi_cursor_select_all_word_key = '<A-x>'
+let g:multi_cursor_start_key           = 'g<C-x>'
+let g:multi_cursor_select_all_key      = 'g<A-x>'
+let g:multi_cursor_next_key            = '<C-x>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-s>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
 set number
 set autoindent
