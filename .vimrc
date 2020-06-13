@@ -28,6 +28,7 @@ let mapleader = ","
 set nocompatible              " required
 filetype off                  " required
 set hidden
+set ff=unix
 
 set number
 set autoindent
