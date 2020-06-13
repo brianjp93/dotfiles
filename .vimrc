@@ -45,7 +45,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 inoremap jk <esc>
 
 nmap <silent> <leader>m :MRU<CR>
-tnoremap <Esc> <C-\><C-n>
+"Enter normal mode in terminal by hitting jk
 tnoremap jk <C-\><C-n>
 
 " markdown conceal off
