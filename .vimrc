@@ -29,6 +29,8 @@ let mapleader = ","
 set nocompatible              " required
 filetype off                  " required
 set hidden
+set wildignore+=node_modules/**,**/node_modules/**
+set wildignore+=**/build/**,build/**
 
 "multiple curors keybinds
 let g:multi_cursor_use_default_mapping=0
