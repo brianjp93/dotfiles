@@ -14,6 +14,8 @@ tags
 *.ipynb
 .vscode/
 .vim/
+.env
+settings.ini
 
 # backup files made by vim
 **/*~
