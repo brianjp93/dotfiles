@@ -7,6 +7,7 @@ Plug 'yggdroot/indentline' "clean indentline
 Plug 'tpope/vim-surround' "surrounding text with quotes or tags etc...
 Plug 'mattn/emmet-vim' "emmet for HTML tags
 Plug 'junegunn/fzf' "fuzzy finder for files
+Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-commentary' "easy commenting
 Plug 'tpope/vim-fugitive' "git integration
 Plug 'vim-airline/vim-airline-themes' "airline themes
@@ -31,6 +32,8 @@ filetype off                  " required
 set hidden
 set wildignore+=node_modules/**,**/node_modules/**
 set wildignore+=**/build/**,build/**
+
+let g:rg_command = 'rg --vimgrep -S'
 
 "multiple curors keybinds
 let g:multi_cursor_use_default_mapping=0
