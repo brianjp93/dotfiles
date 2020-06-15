@@ -37,12 +37,11 @@ set wildignore+=**/build/**,build/**
 
 let g:rg_command = 'rg --vimgrep -S'
 
+set linespace=1
 " set guifont=SpaceMono\ NF:h10
 " set guifont=Monofur\ NF:h12
 set guifont=RobotoMono\ NF:h12
-set linespace=1
 
-" let g:airline_powerline_fonts = 1
 
 "multiple curors keybinds
 let g:multi_cursor_use_default_mapping=0
@@ -111,8 +110,10 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "open tagbar with ALT-l 
 map <A-l> :TagbarToggle<CR>
 
+if has('win32')
+    set termguicolors
+endif
 
-set termguicolors
 set bg=dark
 let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_contrast_light='soft'
