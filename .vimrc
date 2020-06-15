@@ -1,5 +1,6 @@
 call plug#begin()
-Plug 'flazz/vim-colorschemes' "color scheme
+Plug 'gruvbox-community/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 Plug 'scrooloose/nerdtree' "file directory
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline' "statusline at bottom
@@ -22,6 +23,7 @@ Plug 'tpope/vim-unimpaired' "searching easier
 Plug 'vim-scripts/mru.vim' "view recent files
 Plug 'nvie/vim-flake8' "linter
 Plug 'terryma/vim-multiple-cursors'
+Plug 'ryanoasis/vim-devicons'
 "call at end to init vim-plug
 call plug#end()
 
@@ -34,6 +36,13 @@ set wildignore+=node_modules/**,**/node_modules/**
 set wildignore+=**/build/**,build/**
 
 let g:rg_command = 'rg --vimgrep -S'
+
+" set guifont=SpaceMono\ NF:h10
+" set guifont=Monofur\ NF:h12
+set guifont=RobotoMono\ NF:h12
+set linespace=1
+
+" let g:airline_powerline_fonts = 1
 
 "multiple curors keybinds
 let g:multi_cursor_use_default_mapping=0
@@ -103,11 +112,15 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 map <A-l> :TagbarToggle<CR>
 
 
-colorscheme gruvbox 
+set termguicolors
 set bg=dark
 let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_contrast_light='soft'
-let g:gruvbox_termcolors=16
+" let g:gruvbox_termcolors=16
+colorscheme gruvbox 
+
+" colorscheme nord
+
 
 "Nerdtree toggle
 map <C-n> :NERDTreeToggle<CR>
@@ -119,11 +132,7 @@ let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migra
 "ctrl-b to run python script
 autocmd FileType python map <C-b> :!python %<CR>
 
-"airline theme
-let g:airline_theme='base16_gruvbox_dark_hard'
-
-"youcompleteme says to add this
-set encoding=utf-8
+" set encoding=utf-8
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
