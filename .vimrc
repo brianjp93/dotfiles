@@ -41,6 +41,8 @@ set linespace=1
 " set guifont=SpaceMono\ NF:h10
 " set guifont=Monofur\ NF:h12
 set guifont=RobotoMono\ NF:h12
+" set guifont=FiraCode\ NF:h12
+" set guifont=FuraCode\ NF:h12
 
 
 "multiple curors keybinds
@@ -133,7 +135,7 @@ let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migra
 "ctrl-b to run python script
 autocmd FileType python map <C-b> :!python %<CR>
 
-" set encoding=utf-8
+set encoding=utf-8
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
