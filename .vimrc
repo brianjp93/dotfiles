@@ -32,6 +32,7 @@ let mapleader = ","
 set nocompatible              " required
 filetype off                  " required
 set hidden
+set updatetime=100
 set wildignore+=node_modules/**,**/node_modules/**
 set wildignore+=**/build/**,build/**
 
