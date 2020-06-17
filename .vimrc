@@ -24,6 +24,9 @@ Plug 'vim-scripts/mru.vim' "view recent files
 Plug 'nvie/vim-flake8' "linter
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ryanoasis/vim-devicons'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 "call at end to init vim-plug
 call plug#end()
 
@@ -45,6 +48,8 @@ set guifont=RobotoMono\ NF:h12
 " set guifont=FiraCode\ NF:h12
 " set guifont=FuraCode\ NF:h12
 
+
+nmap <silent> <leader>gd <Plug>(coc-definition)
 
 "multiple curors keybinds
 let g:multi_cursor_use_default_mapping=0
@@ -70,6 +75,7 @@ set incsearch
 set hlsearch
 set clipboard=unnamed
 set ic
+let g:tagbar_autofocus=1
 nnoremap <leader><space> :nohlsearch<CR>
 inoremap jk <esc>
 
