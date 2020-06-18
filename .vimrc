@@ -24,6 +24,7 @@ Plug 'vim-scripts/mru.vim' "view recent files
 Plug 'nvie/vim-flake8' "linter
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ryanoasis/vim-devicons'
+Plug 'psf/black', { 'branch': 'stable' }
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
@@ -40,6 +41,9 @@ set wildignore+=node_modules/**,**/node_modules/**
 set wildignore+=**/build/**,build/**
 
 let g:rg_command = 'rg --vimgrep -S'
+
+"autoformat python code on save with black
+autocmd BufWritePre *.py execute ':Black'
 
 set linespace=1
 " set guifont=SpaceMono\ NF:h10
