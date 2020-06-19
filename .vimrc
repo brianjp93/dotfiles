@@ -25,6 +25,7 @@ Plug 'nvie/vim-flake8' "linter
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ryanoasis/vim-devicons'
 Plug 'psf/black', { 'branch': 'stable' }
+Plug 'ap/vim-css-color'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
