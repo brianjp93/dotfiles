@@ -55,6 +55,8 @@ set guifont=RobotoMono\ NF:h12
 
 
 nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>s :G<CR>
+nmap <silent> <leader>d :Gdiff<CR>
 
 "multiple curors keybinds
 let g:multi_cursor_use_default_mapping=0
