@@ -14,7 +14,6 @@ Plug 'tpope/vim-fugitive' "git integration
 Plug 'vim-airline/vim-airline-themes' "airline themes
 Plug 'majutsushi/tagbar' "tagbar
 Plug 'jiangmiao/auto-pairs' "autoclose parens
-Plug 'godlygeek/tabular' "necessary for vim-markdown
 Plug 'maxmellon/vim-jsx-pretty' "syntax highlighting for react
 Plug 'airblade/vim-gitgutter' "show git changes
 Plug 'kennykaye/vim-relativity' "relative line number
@@ -26,9 +25,9 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'ryanoasis/vim-devicons'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'ap/vim-css-color'
-Plug 'JamshedVesuna/vim-markdown-preview' "markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
+  \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 "call at end to init vim-plug
 call plug#end()
@@ -44,13 +43,11 @@ set wildignore+=**/build/**,build/**
 
 let g:rg_command = 'rg --vimgrep -S'
 
-" vim markdown settings
-let vim_markdown_preview_toggle=2
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_github=1
-
 "autoformat python code on save with black
 autocmd BufWritePre *.py execute ':Black'
+
+"markdown preview toggle
+nmap <C-m> <Plug>MarkdownPreviewToggle
 
 set linespace=1
 " set guifont=SpaceMono\ NF:h10
