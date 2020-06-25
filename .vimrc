@@ -82,6 +82,7 @@ set showcmd
 set ruler
 set smarttab
 set incsearch
+set inccommand=nosplit
 set hlsearch
 set clipboard=unnamed
 set ic
