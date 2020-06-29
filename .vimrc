@@ -1,5 +1,6 @@
 call plug#begin()
 Plug 'gruvbox-community/gruvbox'
+Plug 'rust-lang/rust.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'scrooloose/nerdtree' "file directory
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
