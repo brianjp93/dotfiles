@@ -2,11 +2,13 @@ call plug#begin()
 Plug 'gruvbox-community/gruvbox'
 Plug 'rust-lang/rust.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'joshdick/onedark.vim'
 Plug 'scrooloose/nerdtree' "file directory
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline' "statusline at bottom
 Plug 'yggdroot/indentline' "clean indentline
 Plug 'tpope/vim-surround' "surrounding text with quotes or tags etc...
+Plug 'tpope/vim-repeat'
 Plug 'mattn/emmet-vim' "emmet for HTML tags
 Plug 'junegunn/fzf' "fuzzy finder for files
 Plug 'jremmen/vim-ripgrep'
@@ -108,6 +110,7 @@ let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 let python_highlight_all=1
 au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
 syntax on
+set mouse=a
 
 
 "split below and right, rather than top and left
@@ -144,10 +147,7 @@ endif
 set bg=dark
 let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_contrast_light='soft'
-" let g:gruvbox_termcolors=16
 colorscheme gruvbox 
-
-" colorscheme nord
 
 
 "Nerdtree toggle
