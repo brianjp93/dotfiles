@@ -5,6 +5,11 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'easymotion/vim-easymotion'
+Plug 'mbbill/undotree' "undo tree
+Plug 'yuttie/comfortable-motion.vim'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'matze/vim-move' "move blocks of code
+Plug 'wellle/targets.vim' "new text objects
 Plug 'scrooloose/nerdtree' "file directory
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline' "statusline at bottom
@@ -31,11 +36,14 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'ap/vim-css-color'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 "call at end to init vim-plug
 call plug#end()
+
 
 let mapleader = ","
 
@@ -48,11 +56,20 @@ set wildignore+=**/build/**,build/**
 
 let g:rg_command = 'rg --vimgrep -S'
 
+
+"undotree
+nmap <leader>u :UndotreeToggle<CR>
+
 "autoformat python code on save with black
 autocmd BufWritePre *.py execute ':Black'
 
 "markdown preview toggle
 nmap <C-m> <Plug>MarkdownPreviewToggle
+
+"vim-markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
+set conceallevel=0
 
 set linespace=1
 " set guifont=SpaceMono\ NF:h10
@@ -109,15 +126,13 @@ nmap <silent> <leader>m :MRU<CR>
 "Enter normal mode in terminal by hitting jk
 tnoremap jk <C-\><C-n>
 
-" markdown conceal off
-let g:vim_markdown_conceal = 0
 
 "Some python syntax stuff
 set cursorline
 let g:indent_guides_auto_colors = 1
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
-let g:indentLine_fileTypeExclude = ["tagbar"]
+let g:indentLine_fileTypeExclude = ["tagbar", "markdown"]
 let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 let python_highlight_all=1
 au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
@@ -140,17 +155,8 @@ noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
 
-"quickly move line, or block up and down with alt-j and alt-k
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
-
-
-"open tagbar with ALT-l 
-map <A-l> :TagbarToggle<CR>
+"open tagbar with ,-l 
+map <leader>l :TagbarToggle<CR>
 
 if has('win32')
     set termguicolors
