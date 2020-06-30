@@ -4,6 +4,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree' "file directory
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline' "statusline at bottom
@@ -60,6 +61,16 @@ set guifont=RobotoMono\ NF:h12
 " set guifont=FiraCode\ NF:h12
 " set guifont=FuraCode\ NF:h12
 
+
+" EASY MOTION
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>s :G<CR>
