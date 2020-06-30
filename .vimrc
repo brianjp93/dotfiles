@@ -3,6 +3,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'rust-lang/rust.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'scrooloose/nerdtree' "file directory
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline' "statusline at bottom
