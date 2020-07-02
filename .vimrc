@@ -167,7 +167,7 @@ noremap <silent> <C-Down> :resize -3<CR>
 "open tagbar with ,-l 
 map <leader>l :TagbarToggle<CR>
 
-if has('win32')
+if has('termguicolors')
     set termguicolors
 endif
 
