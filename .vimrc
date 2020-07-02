@@ -56,6 +56,15 @@ set wildignore+=**/build/**,build/**
 
 let g:rg_command = 'rg --vimgrep -S'
 
+" map alt-[h j k l] for kitty
+nmap ∆ <a-j>
+nmap ˚ <a-k>
+nmap ˙ <a-h>
+nmap ¬ <a-l>
+vmap ∆ <a-j>
+vmap ˚ <a-k>
+vmap ˙ <a-h>
+vmap ¬ <a-l>
 
 "undotree
 nmap <leader>u :UndotreeToggle<CR>
