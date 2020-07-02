@@ -165,7 +165,8 @@ endif
 set bg=dark
 let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_contrast_light='soft'
-colorscheme gruvbox 
+" colorscheme gruvbox 
+colorscheme onedark 
 
 
 "Nerdtree toggle
