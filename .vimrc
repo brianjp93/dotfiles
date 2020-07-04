@@ -24,6 +24,7 @@ Plug 'tpope/vim-fugitive' "git integration
 Plug 'vim-airline/vim-airline-themes' "airline themes
 Plug 'majutsushi/tagbar' "tagbar
 Plug 'jiangmiao/auto-pairs' "autoclose parens
+Plug 'yuezk/vim-js' "better js highlighting
 Plug 'maxmellon/vim-jsx-pretty' "syntax highlighting for react
 Plug 'airblade/vim-gitgutter' "show git changes
 Plug 'kennykaye/vim-relativity' "relative line number
@@ -55,16 +56,6 @@ set wildignore+=node_modules/**,**/node_modules/**
 set wildignore+=**/build/**,build/**
 
 let g:rg_command = 'rg --vimgrep -S'
-
-" map alt-[h j k l] for kitty
-nmap ∆ <a-j>
-nmap ˚ <a-k>
-nmap ˙ <a-h>
-nmap ¬ <a-l>
-vmap ∆ <a-j>
-vmap ˚ <a-k>
-vmap ˙ <a-h>
-vmap ¬ <a-l>
 
 "undotree
 nmap <leader>u :UndotreeToggle<CR>
