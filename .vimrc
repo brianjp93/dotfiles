@@ -48,6 +48,7 @@ call plug#end()
 
 
 let mapleader = ","
+let maplocalleader = "\\"
 
 set nocompatible              " required
 filetype off                  " required
@@ -58,14 +59,14 @@ set wildignore+=**/build/**,build/**
 
 let g:rg_command = 'rg --vimgrep -S'
 
-"undotree
-nmap <leader>u :UndotreeToggle<CR>
+"undotree toggle and attempt to focus the split
+nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 
-"autoformat python code on save with black
-autocmd BufWritePre *.py execute ':Black'
+"reformat python code with ,-b
+noremap <leader>b :Black<CR>
 
 "markdown preview toggle
-nmap <C-m> <Plug>MarkdownPreviewToggle
+nnoremap <C-m> <Plug>MarkdownPreviewToggle
 
 "vim-markdown
 let g:vim_markdown_folding_disabled = 1
@@ -91,8 +92,8 @@ map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 nmap <silent> <leader>gd <Plug>(coc-definition)
-nmap <silent> <leader>s :G<CR>
-nmap <silent> <leader>d :Gdiff<CR>
+nnoremap <silent> <leader>s :G<CR>
+nnoremap <silent> <leader>d :Gdiff<CR>
 
 "multiple curors keybinds
 let g:multi_cursor_use_default_mapping=0
@@ -123,7 +124,7 @@ let g:tagbar_autofocus=1
 nnoremap <leader><space> :nohlsearch<CR>
 inoremap jk <esc>
 
-nmap <silent> <leader>m :MRU<CR>
+nnoremap <silent> <leader>m :MRU<CR>
 "Enter normal mode in terminal by hitting jk
 tnoremap jk <C-\><C-n>
 
@@ -157,7 +158,7 @@ noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
 
 "open tagbar with ,-l 
-map <leader>l :TagbarToggle<CR>
+noremap <leader>l :TagbarToggle<CR>
 
 if has('termguicolors')
     set termguicolors
@@ -171,14 +172,14 @@ colorscheme onedark
 
 
 "Nerdtree toggle
-map <C-n> :NERDTreeToggle<CR>
+noremap <C-n> :NERDTreeToggle<CR>
 
 "start fzf
-map <C-p> :FZF<CR>
+noremap <C-p> :FZF<CR>
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,.git/*}"'
 
 "ctrl-b to run python script
-autocmd FileType python map <C-b> :!python %<CR>
+autocmd FileType python noremap <C-b> :!python %<CR>
 
 set encoding=utf-8
 
