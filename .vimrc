@@ -1,3 +1,4 @@
+echo ">^.^<"
 call plug#begin()
 Plug 'gruvbox-community/gruvbox'
 Plug 'rust-lang/rust.vim'
