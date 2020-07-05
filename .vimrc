@@ -49,6 +49,8 @@ call plug#end()
 
 let mapleader = ","
 let maplocalleader = "\\"
+nnoremap <leader>ev :vs $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 
 set nocompatible              " required
 filetype off                  " required
@@ -66,7 +68,7 @@ nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 noremap <leader>b :Black<CR>
 
 "markdown preview toggle
-nnoremap <C-m> <Plug>MarkdownPreviewToggle
+nmap <C-m> <Plug>MarkdownPreviewToggle
 
 "vim-markdown
 let g:vim_markdown_folding_disabled = 1
