@@ -161,10 +161,10 @@ if has('termguicolors')
 endif
 
 set bg=dark
-let g:gruvbox_contrast_dark='soft'
-let g:gruvbox_contrast_light='soft'
-" colorscheme gruvbox 
-colorscheme onedark 
+let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_contrast_light='medium'
+colorscheme gruvbox 
+" colorscheme onedark 
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
