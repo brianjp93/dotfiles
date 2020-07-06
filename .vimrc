@@ -1,4 +1,4 @@
-echo ">^.^<"
+echo '>^.^<'
 call plug#begin()
 Plug 'gruvbox-community/gruvbox'
 Plug 'rust-lang/rust.vim'
@@ -95,8 +95,6 @@ let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migra
 "ctrl-b to run python script
 autocmd FileType python noremap <C-b> :!python %<CR>
 
-" vim-slime
-let g:slime_target = "neovim"
 "searching
 let g:rg_command = 'rg --vimgrep -S'
 "vim-markdown
@@ -113,8 +111,15 @@ let g:multi_cursor_next_key            = '<C-x>'
 let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-s>'
 let g:multi_cursor_quit_key            = '<Esc>'
+let g:tagbar_autofocus=1
+let g:indent_guides_auto_colors = 1
+let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_fileTypeExclude = ["tagbar", "markdown"]
+let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
+let python_highlight_all=1
+au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
 
-"split below and right, rather than top and left
 set splitbelow
 set splitright
 set conceallevel=0
@@ -136,30 +141,18 @@ set incsearch
 set inccommand=nosplit
 set hlsearch
 set clipboard=unnamed
-set ic
+set ignorecase
 set cursorline
 set encoding=utf-8
 set mouse=a
 set nocompatible
 syntax on
 
-let g:tagbar_autofocus=1
-
-"Some python syntax stuff
-let g:indent_guides_auto_colors = 1
-let g:indentLine_leadingSpaceChar = '·'
-let g:indentLine_leadingSpaceEnabled = 1
-let g:indentLine_fileTypeExclude = ["tagbar", "markdown"]
-let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
-let python_highlight_all=1
-au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
-
-"move windows with ctrl+direction
-
 if has('termguicolors')
     set termguicolors
 endif
 
+" COLORSCHEME
 set bg=dark
 let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_contrast_light='medium'
