@@ -51,38 +51,12 @@ let mapleader = ","
 let maplocalleader = "\\"
 nnoremap <leader>ev :vs $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
-
-set nocompatible              " required
-filetype off                  " required
-set hidden
-set updatetime=100
-set wildignore+=node_modules/**,**/node_modules/**
-set wildignore+=**/build/**,build/**
-
-let g:rg_command = 'rg --vimgrep -S'
-
 "undotree toggle and attempt to focus the split
 nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
-
 "reformat python code with ,-b
 noremap <leader>b :Black<CR>
-
 "markdown preview toggle
 nmap <C-m> <Plug>MarkdownPreviewToggle
-
-"vim-markdown
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_conceal = 0
-set conceallevel=0
-
-set linespace=1
-" set guifont=SpaceMono\ NF:h10
-" set guifont=Monofur\ NF:h12
-set guifont=RobotoMono\ NF:h12
-" set guifont=FiraCode\ NF:h12
-" set guifont=FuraCode\ NF:h12
-
-
 " EASY MOTION
 " <Leader>f{char} to move to {char}
 map  <Leader>f <Plug>(easymotion-bd-f)
@@ -92,11 +66,39 @@ nmap s <Plug>(easymotion-overwin-f2)
 " Move to word
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
-
 nmap <silent> <leader>gd <Plug>(coc-definition)
 nnoremap <silent> <leader>s :G<CR>
 nnoremap <silent> <leader>d :Gdiff<CR>
+nnoremap <leader><space> :nohlsearch<CR>
+inoremap jk <esc>
+nnoremap <silent> <leader>m :MRU<CR>
+"Enter normal mode in terminal by hitting jk
+tnoremap jk <C-\><C-n>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+"remap resizing
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vertical resize -3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :resize -3<CR>
+"Nerdtree toggle
+noremap <C-n> :NERDTreeToggle<CR>
+"open tagbar with ,-l 
+noremap <leader>l :TagbarToggle<CR>
+"start fzf
+noremap <C-p> :FZF<CR>
+let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,.git/*}"'
+"ctrl-b to run python script
+autocmd FileType python noremap <C-b> :!python %<CR>
 
+
+"searching
+let g:rg_command = 'rg --vimgrep -S'
+"vim-markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
 "multiple curors keybinds
 let g:multi_cursor_use_default_mapping=0
 " Default mapping
@@ -109,6 +111,16 @@ let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-s>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
+"split below and right, rather than top and left
+set splitbelow
+set splitright
+set conceallevel=0
+set hidden
+set updatetime=100
+set wildignore+=node_modules/**,**/node_modules/**
+set wildignore+=**/build/**,build/**
+set linespace=1
+set guifont=RobotoMono\ NF:h12
 set number
 set autoindent
 set ts=4 sw=4
@@ -122,17 +134,16 @@ set inccommand=nosplit
 set hlsearch
 set clipboard=unnamed
 set ic
+set cursorline
+set encoding=utf-8
+set mouse=a
+set nocompatible
+syntax on
+filetype off
+
 let g:tagbar_autofocus=1
-nnoremap <leader><space> :nohlsearch<CR>
-inoremap jk <esc>
-
-nnoremap <silent> <leader>m :MRU<CR>
-"Enter normal mode in terminal by hitting jk
-tnoremap jk <C-\><C-n>
-
 
 "Some python syntax stuff
-set cursorline
 let g:indent_guides_auto_colors = 1
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
@@ -140,27 +151,8 @@ let g:indentLine_fileTypeExclude = ["tagbar", "markdown"]
 let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 let python_highlight_all=1
 au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
-syntax on
-set mouse=a
 
-
-"split below and right, rather than top and left
-set splitbelow
-set splitright
 "move windows with ctrl+direction
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-"remap resizing
-noremap <silent> <C-Left> :vertical resize +3<CR>
-noremap <silent> <C-Right> :vertical resize -3<CR>
-noremap <silent> <C-Up> :resize +3<CR>
-noremap <silent> <C-Down> :resize -3<CR>
-
-"open tagbar with ,-l 
-noremap <leader>l :TagbarToggle<CR>
 
 if has('termguicolors')
     set termguicolors
@@ -172,25 +164,13 @@ let g:gruvbox_contrast_light='soft'
 " colorscheme gruvbox 
 colorscheme onedark 
 
-
-"Nerdtree toggle
-noremap <C-n> :NERDTreeToggle<CR>
-
-"start fzf
-noremap <C-p> :FZF<CR>
-let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,.git/*}"'
-
-"ctrl-b to run python script
-autocmd FileType python noremap <C-b> :!python %<CR>
-
-set encoding=utf-8
-
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
+" press tab to iterate through autocomplete options
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
