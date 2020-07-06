@@ -5,6 +5,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'jpalardy/vim-slime'
 Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree' "undo tree
 Plug 'yuttie/comfortable-motion.vim'
@@ -46,11 +47,14 @@ Plug 'prettier/vim-prettier', {
 "call at end to init vim-plug
 call plug#end()
 
-
 let mapleader = ","
 let maplocalleader = "\\"
 nnoremap <leader>ev :vs $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
+" map emmet expand to alt-i
+inoremap <A-i> <esc>:call emmet#expandAbbr(3, "")<cr>i
+nnoremap <A-i> :call emmet#expandAbbr(3, "")<cr>
+inoremap jk <esc>
 "undotree toggle and attempt to focus the split
 nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 "reformat python code with ,-b
@@ -70,7 +74,6 @@ nmap <silent> <leader>gd <Plug>(coc-definition)
 nnoremap <silent> <leader>s :G<CR>
 nnoremap <silent> <leader>d :Gdiff<CR>
 nnoremap <leader><space> :nohlsearch<CR>
-inoremap jk <esc>
 nnoremap <silent> <leader>m :MRU<CR>
 "Enter normal mode in terminal by hitting jk
 tnoremap jk <C-\><C-n>
@@ -93,7 +96,8 @@ let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migra
 "ctrl-b to run python script
 autocmd FileType python noremap <C-b> :!python %<CR>
 
-
+" vim-slime
+let g:slime_target = "neovim"
 "searching
 let g:rg_command = 'rg --vimgrep -S'
 "vim-markdown
@@ -139,7 +143,6 @@ set encoding=utf-8
 set mouse=a
 set nocompatible
 syntax on
-filetype off
 
 let g:tagbar_autofocus=1
 
