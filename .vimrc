@@ -5,7 +5,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'jpalardy/vim-slime'
 Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree' "undo tree
 Plug 'yuttie/comfortable-motion.vim'
