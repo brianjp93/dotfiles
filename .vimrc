@@ -5,6 +5,10 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'ayu-theme/ayu-vim'
+Plug 'nightsense/carbonized'
+Plug 'ajmwagar/vim-deus'
+Plug 'kristijanhusak/vim-hybrid-material'
 " END THEMES
 Plug 'rust-lang/rust.vim'
 Plug 'easymotion/vim-easymotion'
@@ -97,6 +101,10 @@ let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migra
 "ctrl-b to run python script
 autocmd FileType python noremap <C-B> :CocCommand python.execInTerminal<cr>
 
+"bold
+let g:enable_bold_font = 1
+"italics
+let g:enable_italic_font = 1
 "searching
 let g:rg_command = 'rg --vimgrep -S'
 "vim-markdown
@@ -104,7 +112,7 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal = 0
 "multiple curors keybinds
 let g:multi_cursor_use_default_mapping=0
-" Default mapping
+"Default mapping
 let g:multi_cursor_start_word_key      = '<C-x>'
 let g:multi_cursor_select_all_word_key = '<A-x>'
 let g:multi_cursor_start_key           = 'g<C-x>'
@@ -158,8 +166,9 @@ endif
 set bg=dark
 let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_contrast_light='medium'
-colorscheme gruvbox 
+" colorscheme gruvbox 
 " colorscheme onedark 
+colorscheme deus
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
