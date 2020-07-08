@@ -183,7 +183,7 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 
 
-"""""" CYCLE THEMES WITH <A-C> """"""
+" ------ CYCLE THEMES WITH <A-C> ------
 let s:mycolors = ['deus', 'gruvbox', 'onedark']  " colorscheme names that we use to set color
 
 function! NextColor()
@@ -206,4 +206,4 @@ function! s:NextColor()
 endfunction
 
 nnoremap <a-c> :call NextColor()<CR>
-"""""" END CYCLE THEMES """"""
+" ------ END CYCLE THEMES ------
