@@ -181,3 +181,28 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
+
+"""""" CYCLE THEMES WITH <A-C> """"""
+let s:mycolors = ['deus', 'gruvbox', 'onedark']  " colorscheme names that we use to set color
+
+function! NextColor()
+  call s:NextColor()
+endfunction
+
+function! s:NextColor()
+  let current = index(s:mycolors, g:colors_name)
+  let go_next = 1
+  if index(['gruvbox'], g:colors_name) >= 0
+    if &background == 'dark'
+      let go_next = 0
+      execute 'set bg=light'
+    endif
+  endif
+  if go_next
+      execute 'colorscheme ' .s:mycolors[(current+1) % len(s:mycolors)]
+  endif
+endfunction
+
+nnoremap <a-c> :call NextColor(1)<CR>
+"""""" END CYCLE THEMES """"""
