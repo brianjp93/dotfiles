@@ -95,7 +95,7 @@ noremap <leader>l :TagbarToggle<CR>
 noremap <C-p> :FZF<CR>
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,.git/*}"'
 "ctrl-b to run python script
-autocmd FileType python noremap <C-b> :!python %<CR>
+autocmd FileType python noremap <C-B> :CocCommand python.execInTerminal<cr>
 
 "searching
 let g:rg_command = 'rg --vimgrep -S'
