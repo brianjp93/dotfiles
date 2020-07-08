@@ -200,9 +200,10 @@ function! s:NextColor()
     endif
   endif
   if go_next
+      execute 'set bg=dark'
       execute 'colorscheme ' .s:mycolors[(current+1) % len(s:mycolors)]
   endif
 endfunction
 
-nnoremap <a-c> :call NextColor(1)<CR>
+nnoremap <a-c> :call NextColor()<CR>
 """""" END CYCLE THEMES """"""
