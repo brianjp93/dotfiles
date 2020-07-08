@@ -1,10 +1,12 @@
 echo '>^.^<'
 call plug#begin()
+" THEMES
 Plug 'gruvbox-community/gruvbox'
-Plug 'rust-lang/rust.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
+" END THEMES
+Plug 'rust-lang/rust.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree' "undo tree
 Plug 'yuttie/comfortable-motion.vim'
