@@ -42,3 +42,4 @@ fd() {
     cd "$dir"
 }
 
+. /Users/brian/anaconda3/etc/profile.d/conda.sh
