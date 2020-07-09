@@ -205,5 +205,5 @@ function! s:NextColor()
   endif
 endfunction
 
-nnoremap <a-c> :call NextColor()<CR>
+nnoremap <leader>c :call NextColor()<CR>
 " ------ END CYCLE THEMES ------
