@@ -55,7 +55,7 @@ call plug#end()
 let mapleader = ","
 let maplocalleader = "\\"
 nnoremap <leader>ev :vs $MYVIMRC<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>vv :source $MYVIMRC<CR>
 " map emmet expand to alt-i
 inoremap <A-i> <esc>:call emmet#expandAbbr(3, "")<cr>i
 nnoremap <A-i> :call emmet#expandAbbr(3, "")<cr>
