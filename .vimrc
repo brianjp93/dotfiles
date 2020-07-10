@@ -166,8 +166,8 @@ endif
 set bg=dark
 let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_contrast_light='medium'
-" colorscheme gruvbox 
-" colorscheme onedark 
+" colorscheme gruvbox
+" colorscheme onedark
 colorscheme deus
 
 " use <tab> for trigger completion and navigate to the next complete item
@@ -184,7 +184,7 @@ inoremap <silent><expr> <Tab>
 
 
 " ------ CYCLE THEMES WITH <A-C> ------
-let s:mycolors = ['deus', 'gruvbox', 'onedark']  " colorscheme names that we use to set color
+let s:mycolors = ['deus', 'gruvbox', 'onedark', 'carbonized-light']  " colorscheme names that we use to set color
 
 function! NextColor()
   call s:NextColor()
