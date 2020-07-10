@@ -5,6 +5,8 @@ alias gs="git status"
 alias ls="ls -A"
 alias vim="nvim"
 alias rr="ranger"
+alias ca="conda activate"
+alias cad="conda deactivate"
 
 alias goh='cd ~'
 alias goc='cd ~/Documents/code'
