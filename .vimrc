@@ -79,6 +79,8 @@ nmap <silent> <leader>gd <Plug>(coc-definition)
 nnoremap <silent> <leader>s :G<CR>
 nnoremap <silent> <leader>d :Gdiff<CR>
 nnoremap <silent> <leader>gb :Git blame<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gl :Git log<CR>
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <silent> <leader>m :MRU<CR>
 "Enter normal mode in terminal by hitting jk
