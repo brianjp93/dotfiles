@@ -13,7 +13,7 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'rust-lang/rust.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree' "undo tree
-Plug 'yuttie/comfortable-motion.vim'
+Plug 'psliwka/vim-smoothie' " smooth scrolling
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'matze/vim-move' "move blocks of code
 Plug 'wellle/targets.vim' "new text objects
