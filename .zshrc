@@ -45,3 +45,4 @@ fd() {
 }
 
 . /Users/brian/anaconda3/etc/profile.d/conda.sh
+conda activate base
