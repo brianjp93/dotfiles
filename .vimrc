@@ -133,6 +133,7 @@ let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 let python_highlight_all=1
 au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
 
+set scrolloff=1
 set splitbelow
 set splitright
 set conceallevel=0
