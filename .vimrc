@@ -60,6 +60,7 @@ nnoremap <leader>vv :source $MYVIMRC<CR>
 inoremap <A-i> <esc>:call emmet#expandAbbr(3, "")<cr>i
 nnoremap <A-i> :call emmet#expandAbbr(3, "")<cr>
 inoremap jk <esc>
+tnoremap jk <C-\><C-n>
 "undotree toggle and attempt to focus the split
 nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 "reformat python code with ,-b
@@ -84,7 +85,6 @@ nnoremap <silent> <leader>gl :Git log<CR>
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <silent> <leader>m :MRU<CR>
 "Enter normal mode in terminal by hitting jk
-tnoremap jk <C-\><C-n>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
