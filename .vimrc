@@ -10,22 +10,22 @@ Plug 'nightsense/carbonized'
 Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 " END THEMES
-Plug 'rust-lang/rust.vim'
-Plug 'easymotion/vim-easymotion'
+Plug 'rust-lang/rust.vim' "rust language definitions
+Plug 'easymotion/vim-easymotion' "move around in document with new motions
 Plug 'mbbill/undotree' "undo tree
 Plug 'psliwka/vim-smoothie' " smooth scrolling
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'matze/vim-move' "move blocks of code
 Plug 'wellle/targets.vim' "new text objects
 Plug 'scrooloose/nerdtree' "file directory
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocomplete for many languages
 Plug 'vim-airline/vim-airline' "statusline at bottom
 Plug 'yggdroot/indentline' "clean indentline
 Plug 'tpope/vim-surround' "surrounding text with quotes or tags etc...
-Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat' "enables repeat with . for some plugins
 Plug 'mattn/emmet-vim' "emmet for HTML tags
 Plug 'junegunn/fzf' "fuzzy finder for files
-Plug 'jremmen/vim-ripgrep'
+Plug 'jremmen/vim-ripgrep' "fast searching
 Plug 'tpope/vim-commentary' "easy commenting
 Plug 'tpope/vim-fugitive' "git integration
 Plug 'vim-airline/vim-airline-themes' "airline themes
@@ -34,21 +34,19 @@ Plug 'jiangmiao/auto-pairs' "autoclose parens
 Plug 'yuezk/vim-js' "better js highlighting
 Plug 'maxmellon/vim-jsx-pretty' "syntax highlighting for react
 Plug 'airblade/vim-gitgutter' "show git changes
-Plug 'kennykaye/vim-relativity' "relative line number
 Plug 'vim-python/python-syntax' "python syntax
 Plug 'tpope/vim-unimpaired' "searching easier
 Plug 'vim-scripts/mru.vim' "view recent files
-Plug 'nvie/vim-flake8' "linter
-Plug 'terryma/vim-multiple-cursors'
-Plug 'ryanoasis/vim-devicons'
-Plug 'psf/black', { 'branch': 'stable' }
-Plug 'ap/vim-css-color'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+Plug 'terryma/vim-multiple-cursors' "sublime style multi cursors
+Plug 'ryanoasis/vim-devicons' "enable icon font from nerd fonts
+Plug 'psf/black', { 'branch': 'stable' } "python formatting
+Plug 'ap/vim-css-color' "show color when writing hex colors/rgb
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  } "show markdown preview
+Plug 'godlygeek/tabular' "required for vim-markdown?
+Plug 'plasticboy/vim-markdown' "markdown syntax highlighting
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] } "js/ts/css/json/markdown... formatting
 "call at end to init vim-plug
 call plug#end()
 
@@ -132,6 +130,8 @@ let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 let python_highlight_all=1
 au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
 
+set relativenumber
+set number
 set scrolloff=1
 set splitbelow
 set splitright
@@ -142,7 +142,6 @@ set wildignore+=node_modules/**,**/node_modules/**
 set wildignore+=**/build/**,build/**
 set linespace=1
 set guifont=RobotoMono\ NF:h12
-set number
 set autoindent
 set ts=4 sw=4
 set softtabstop=4
