@@ -116,6 +116,9 @@ nmap <silent> <C-n> :call NERDTreeToggleInCurDir()<cr>
 function! NERDTreeToggleInCurDir()
   " If NERDTree is open in the current buffer
   if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+    " fold directory so that we don't have a mess of open directories every
+    " time we open nerdtree
+    exe ":NERDTree"
     exe ":NERDTreeClose"
   else
     exe ":NERDTreeFind"
