@@ -11,6 +11,7 @@ Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 " END THEMES
 Plug 'rust-lang/rust.vim' "rust language definitions
+Plug 'pechorin/any-jump.vim' "jump to definition in a popup window
 Plug 'easymotion/vim-easymotion' "move around in document with new motions
 Plug 'mbbill/undotree' "undo tree
 Plug 'psliwka/vim-smoothie' " smooth scrolling
