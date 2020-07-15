@@ -86,14 +86,14 @@ nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-autocmd FileType javascript xmap <buffer> if <Plug>(coc-funcobj-i)
-autocmd FileType javascript omap <buffer> if <Plug>(coc-funcobj-i)
-autocmd FileType javascript xmap <buffer> af <Plug>(coc-funcobj-a)
-autocmd FileType javascript omap <buffer> af <Plug>(coc-funcobj-a)
-autocmd FileType javascript xmap <buffer> ic <Plug>(coc-classobj-i)
-autocmd FileType javascript omap <buffer> ic <Plug>(coc-classobj-i)
-autocmd FileType javascript xmap <buffer> ac <Plug>(coc-classobj-a)
-autocmd FileType javascript omap <buffer> ac <Plug>(coc-classobj-a)
+autocmd FileType javascript,rust,cpp,c xmap <buffer> if <Plug>(coc-funcobj-i)
+autocmd FileType javascript,rust,cpp,c omap <buffer> if <Plug>(coc-funcobj-i)
+autocmd FileType javascript,rust,cpp,c xmap <buffer> af <Plug>(coc-funcobj-a)
+autocmd FileType javascript,rust,cpp,c omap <buffer> af <Plug>(coc-funcobj-a)
+autocmd FileType javascript,rust,cpp,c xmap <buffer> ic <Plug>(coc-classobj-i)
+autocmd FileType javascript,rust,cpp,c omap <buffer> ic <Plug>(coc-classobj-i)
+autocmd FileType javascript,rust,cpp,c xmap <buffer> ac <Plug>(coc-classobj-a)
+autocmd FileType javascript,rust,cpp,c omap <buffer> ac <Plug>(coc-classobj-a)
 "------ END COC ------
 nnoremap <silent> <leader>s :G<CR>
 nnoremap <silent> <leader>d :Gdiff<CR>
