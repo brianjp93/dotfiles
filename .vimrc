@@ -10,6 +10,7 @@ Plug 'nightsense/carbonized'
 Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 " END THEMES
+Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'rust-lang/rust.vim' "rust language definitions
 Plug 'pechorin/any-jump.vim' "jump to definition in a popup window
 Plug 'easymotion/vim-easymotion' "move around in document with new motions
@@ -75,7 +76,25 @@ nmap s <Plug>(easymotion-overwin-f2)
 " Move to word
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
+"------ COC ------
 nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>gr <Plug>(coc-references)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+" Find symbol of current document.
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+autocmd FileType javascript xmap <buffer> if <Plug>(coc-funcobj-i)
+autocmd FileType javascript omap <buffer> if <Plug>(coc-funcobj-i)
+autocmd FileType javascript xmap <buffer> af <Plug>(coc-funcobj-a)
+autocmd FileType javascript omap <buffer> af <Plug>(coc-funcobj-a)
+autocmd FileType javascript xmap <buffer> ic <Plug>(coc-classobj-i)
+autocmd FileType javascript omap <buffer> ic <Plug>(coc-classobj-i)
+autocmd FileType javascript xmap <buffer> ac <Plug>(coc-classobj-a)
+autocmd FileType javascript omap <buffer> ac <Plug>(coc-classobj-a)
+"------ END COC ------
 nnoremap <silent> <leader>s :G<CR>
 nnoremap <silent> <leader>d :Gdiff<CR>
 nnoremap <silent> <leader>gb :Git blame<CR>
