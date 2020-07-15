@@ -65,3 +65,4 @@ yabai -m rule --add label="The Unarchiver" app="^The Unarchiver$" manage=off
 yabai -m rule --add label="Transmission" app="^Transmission$" manage=off
 yabai -m rule --add label="VirtualBox" app="^VirtualBox$" manage=off
 yabai -m rule --add label="Spark" app="^Spark$" manage=off
+yabai -m rule --add label="FaceTime" app="^FaceTime$" manage=off
