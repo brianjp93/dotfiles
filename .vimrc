@@ -54,7 +54,7 @@ call plug#end()
 
 let mapleader = ","
 let maplocalleader = "\\"
-nnoremap <leader>ev :vs $MYVIMRC<CR>
+nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>vv :source $MYVIMRC<CR>
 " map emmet expand to alt-i
 inoremap <A-i> <esc>:call emmet#expandAbbr(3, "")<cr>i
@@ -121,7 +121,11 @@ function! NERDTreeToggleInCurDir()
     exe ":NERDTree"
     exe ":NERDTreeClose"
   else
-    exe ":NERDTreeFind"
+    if line('$') == 1 && getline(1) == ''
+        exe ":NERDTreeToggle"
+    else
+        exe ":NERDTreeFind"
+    endif
   endif
 endfunction
 "open tagbar with ,-l 
