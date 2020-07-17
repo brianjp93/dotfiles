@@ -12,11 +12,9 @@ Plug 'kristijanhusak/vim-hybrid-material'
 " END THEMES
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'rust-lang/rust.vim' "rust language definitions
-Plug 'pechorin/any-jump.vim' "jump to definition in a popup window
 Plug 'easymotion/vim-easymotion' "move around in document with new motions
 Plug 'mbbill/undotree' "undo tree
 Plug 'psliwka/vim-smoothie' " smooth scrolling
-Plug 'michaeljsmith/vim-indent-object'
 Plug 'matze/vim-move' "move blocks of code
 Plug 'wellle/targets.vim' "new text objects
 Plug 'scrooloose/nerdtree' "file directory
@@ -49,7 +47,6 @@ Plug 'plasticboy/vim-markdown' "markdown syntax highlighting
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] } "js/ts/css/json/markdown... formatting
-"call at end to init vim-plug
 call plug#end()
 
 let mapleader = ","
@@ -66,11 +63,8 @@ nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 "reformat python code with ,-b
 noremap <leader>b :Black<CR>
 "markdown preview toggle
-nmap <C-m> <Plug>MarkdownPreviewToggle
+nmap <space>m <Plug>MarkdownPreviewToggle
 " EASY MOTION
-" <Leader>f{char} to move to {char}
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
 " s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-overwin-f2)
 " Move to word
@@ -121,9 +115,12 @@ function! NERDTreeToggleInCurDir()
     exe ":NERDTree"
     exe ":NERDTreeClose"
   else
+    " check if the buffer is empty
     if line('$') == 1 && getline(1) == ''
+        " toggle nerdtree normally if the buffer is empty
         exe ":NERDTreeToggle"
     else
+        " do nerdtreefind if we are in a file
         exe ":NERDTreeFind"
     endif
   endif
@@ -141,7 +138,7 @@ let g:enable_bold_font = 1
 "italics
 let g:enable_italic_font = 1
 "searching
-let g:rg_command = 'rg --vimgrep -S'
+let g:rg_command = 'rg --vimgrep -S --glob "~{**/migrations/**.py}"'
 "vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal = 0
@@ -165,9 +162,12 @@ let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 let python_highlight_all=1
 au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
 
+set tags=./tags
+set nobackup
+set nowritebackup
 set relativenumber
 set number
-set scrolloff=1
+set scrolloff=2
 set splitbelow
 set splitright
 set conceallevel=0
