@@ -54,6 +54,7 @@ let maplocalleader = "\\"
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>vv :source $MYVIMRC<CR>
 nnoremap <leader>j :Rg "<cword>"
+nnoremap <leader>a :AirlineToggle<CR>
 " map emmet expand to alt-i
 inoremap <A-i> <esc>:call emmet#expandAbbr(3, "")<CR>i
 nnoremap <A-i> :call emmet#expandAbbr(3, "")<CR>
@@ -164,6 +165,7 @@ let python_highlight_all=1
 au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
 
 set tags=./tags
+set showtabline=2
 set nobackup
 set nowritebackup
 set relativenumber
@@ -173,7 +175,7 @@ set splitbelow
 set splitright
 set conceallevel=0
 set hidden
-set updatetime=100
+set updatetime=200
 set wildignore+=node_modules/**,**/node_modules/**
 set wildignore+=**/build/**,build/**
 set linespace=1
