@@ -53,9 +53,10 @@ let mapleader = ","
 let maplocalleader = "\\"
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>vv :source $MYVIMRC<CR>
+nnoremap <leader>j :Rg "<cword>"
 " map emmet expand to alt-i
-inoremap <A-i> <esc>:call emmet#expandAbbr(3, "")<cr>i
-nnoremap <A-i> :call emmet#expandAbbr(3, "")<cr>
+inoremap <A-i> <esc>:call emmet#expandAbbr(3, "")<CR>i
+nnoremap <A-i> :call emmet#expandAbbr(3, "")<CR>
 inoremap jk <esc>
 tnoremap jk <C-\><C-n>
 "undotree toggle and attempt to focus the split
@@ -75,9 +76,9 @@ nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>gr <Plug>(coc-references)
 nmap <silent> <leader>gi <Plug>(coc-implementation)
 " Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<CR>
 " Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<CR>
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
 autocmd FileType javascript,rust,cpp,c xmap <buffer> if <Plug>(coc-funcobj-i)
@@ -106,7 +107,7 @@ noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
 " Open NERDTree in the directory of the current file (or /home if no file is open)
-nmap <silent> <C-n> :call NERDTreeToggleInCurDir()<cr>
+nmap <silent> <C-n> :call NERDTreeToggleInCurDir()<CR>
 function! NERDTreeToggleInCurDir()
   " If NERDTree is open in the current buffer
   if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
@@ -138,7 +139,7 @@ let g:enable_bold_font = 1
 "italics
 let g:enable_italic_font = 1
 "searching
-let g:rg_command = 'rg --vimgrep -S --glob "~{**/migrations/**.py}"'
+let g:rg_command = 'rg --vimgrep -S'
 "vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal = 0
