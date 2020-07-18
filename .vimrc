@@ -168,6 +168,7 @@ set tags=./tags
 set showtabline=2
 set nobackup
 set nowritebackup
+set noswapfile
 set relativenumber
 set number
 set scrolloff=2
@@ -195,8 +196,16 @@ set ignorecase
 set cursorline
 set encoding=utf-8
 set mouse=a
+set lazyredraw "don't redraw while executing macros
 set nocompatible
+set fileformats=unix,dos,mac
 syntax on
+
+try
+    set undodir=~/temp/vimundo
+    set undofile
+catch
+endtry
 
 if has('termguicolors')
     set termguicolors
