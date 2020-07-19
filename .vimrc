@@ -165,7 +165,11 @@ let python_highlight_all=1
 au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
 
 set tags=./tags
+set undolevels=999
 set showtabline=2
+set showmatch
+set title               "set title of terminal window
+set magic               "extended regex
 set nobackup
 set nowritebackup
 set noswapfile
@@ -192,7 +196,7 @@ set incsearch
 set inccommand=nosplit
 set hlsearch
 set clipboard=unnamed
-set ignorecase
+set ignorecase smartcase
 set cursorline
 set encoding=utf-8
 set mouse=a
