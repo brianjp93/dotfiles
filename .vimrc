@@ -133,6 +133,8 @@ noremap <leader>l :TagbarToggle<CR>
 "start fzf
 noremap <C-p> :FZF<CR>
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,.git/*}"'
+let $FZF_DEFAULT_OPTS='--reverse'
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 "ctrl-b to run python script
 autocmd FileType python noremap <C-b> :!python %<CR>
 
@@ -157,6 +159,7 @@ let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-s>'
 let g:multi_cursor_quit_key            = '<Esc>'
 let g:tagbar_autofocus=1
+let g:tagbar_sort=0
 let g:indent_guides_auto_colors = 1
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
