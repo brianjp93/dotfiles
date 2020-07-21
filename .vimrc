@@ -10,7 +10,8 @@ Plug 'nightsense/carbonized'
 Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 " END THEMES
-Plug 'jeetsukumaran/vim-pythonsense'
+Plug 'jeetsukumaran/vim-pythonsense' "add function/class text object for python
+Plug 'michaeljsmith/vim-indent-object' "add vim-text-objects for indentation
 Plug 'rust-lang/rust.vim' "rust language definitions
 Plug 'easymotion/vim-easymotion' "move around in document with new motions
 Plug 'mbbill/undotree' "undo tree
