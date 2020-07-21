@@ -171,7 +171,6 @@ au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b
 set tags=./tags,tags
 set undolevels=999
 set showtabline=2
-set showmatch
 set title               "set title of terminal window
 set magic               "extended regex
 set nobackup
