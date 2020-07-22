@@ -133,8 +133,6 @@ noremap <leader>l :TagbarToggle<CR>
 "start fzf
 noremap <C-p> :FZF<CR>
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,.git/*}"'
-let $FZF_DEFAULT_OPTS='--reverse'
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 "ctrl-b to run python script
 autocmd FileType python noremap <C-b> :!python %<CR>
 
