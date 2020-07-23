@@ -236,7 +236,6 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
-
 " ------ CYCLE THEMES WITH <A-C> ------
 let s:mycolors = ['deus', 'gruvbox', 'onedark', 'carbonized-light']  " colorscheme names that we use to set color
 
