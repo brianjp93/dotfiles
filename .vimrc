@@ -10,6 +10,7 @@ Plug 'nightsense/carbonized'
 Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 " END THEMES
+Plug 'tweekmonster/django-plus.vim'
 Plug 'jeetsukumaran/vim-pythonsense' "add function/class text object for python
 Plug 'michaeljsmith/vim-indent-object' "add vim-text-objects for indentation
 Plug 'rust-lang/rust.vim' "rust language definitions
