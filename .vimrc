@@ -66,6 +66,7 @@ tnoremap jk <C-\><C-n>
 nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 "reformat python code with ,-b
 noremap <leader>b :Black<CR>
+autocmd FileType rust nnoremap <silent> <leader>p :!rustfmt %<CR>
 "markdown preview toggle
 nmap <space>m <Plug>MarkdownPreviewToggle
 " EASY MOTION
@@ -203,7 +204,6 @@ set cursorline
 set encoding=utf-8
 set mouse=a
 set lazyredraw "don't redraw while executing macros
-set nocompatible
 set fileformats=unix,dos,mac
 syntax on
 
