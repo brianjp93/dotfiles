@@ -68,6 +68,7 @@ nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 "reformat python code with ,-b
 autocmd FileType python nnoremap <leader>p :Black<CR>
 autocmd FileType rust nnoremap <silent> <leader>p :!rustfmt %<CR>
+execute "autocmd FileType html,htmldjango,css nnoremap <silent> <leader>p :!js-beautify % --replace --indent-size " + &sw + "<CR>"
 "markdown preview toggle
 nmap <space>m <Plug>MarkdownPreviewToggle
 " EASY MOTION
@@ -135,7 +136,7 @@ endfunction
 noremap <leader>l :TagbarToggle<CR>
 "start fzf
 noremap <C-p> :FZF<CR>
-let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,target/*,.git/*}"'
+let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,target/*,.git/*,**.pyc}"'
 "ctrl-b to run python script
 autocmd FileType python noremap <C-b> :!python %<CR>
 autocmd FileType rust noremap <C-b> :!cargo run<CR>
@@ -207,6 +208,7 @@ set encoding=utf-8
 set mouse=a
 set lazyredraw "don't redraw while executing macros
 set fileformats=unix,dos,mac
+autocmd BufNewFile,BufRead *.html set filetype=htmldjango
 syntax on
 
 try
