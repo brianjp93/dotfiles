@@ -66,7 +66,7 @@ tnoremap jk <C-\><C-n>
 "undotree toggle and attempt to focus the split
 nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 "reformat python code with ,-b
-noremap <leader>b :Black<CR>
+autocmd FileType python nnoremap <leader>p :Black<CR>
 autocmd FileType rust nnoremap <silent> <leader>p :!rustfmt %<CR>
 "markdown preview toggle
 nmap <space>m <Plug>MarkdownPreviewToggle
