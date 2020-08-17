@@ -11,6 +11,7 @@ Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 " END THEMES
 Plug 'tweekmonster/django-plus.vim'
+Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
 Plug 'jeetsukumaran/vim-pythonsense' "add function/class text object for python
 Plug 'michaeljsmith/vim-indent-object' "add vim-text-objects for indentation
 Plug 'rust-lang/rust.vim' "rust language definitions
@@ -130,7 +131,7 @@ function! NERDTreeToggleInCurDir()
     endif
   endif
 endfunction
-"open tagbar with ,-l 
+"open tagbar with ,-l
 noremap <leader>l :TagbarToggle<CR>
 "start fzf
 noremap <C-p> :FZF<CR>
