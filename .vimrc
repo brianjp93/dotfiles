@@ -49,7 +49,7 @@ Plug 'godlygeek/tabular' "required for vim-markdown?
 Plug 'plasticboy/vim-markdown' "markdown syntax highlighting
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] } "js/ts/css/json/markdown... formatting
+  \ 'for': ['javascript', 'typescript', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml'] } "js/ts/css/json/markdown... formatting
 call plug#end()
 
 let mapleader = ","
@@ -68,7 +68,7 @@ nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 "reformat python code with ,-b
 autocmd FileType python nnoremap <leader>p :Black<CR>
 autocmd FileType rust nnoremap <silent> <leader>p :!rustfmt %<CR>
-execute "autocmd FileType html,htmldjango,css nnoremap <silent> <leader>p :!js-beautify % --replace --indent-size " + &sw + "<CR>"
+autocmd FileType html,htmldjango,css noremap <leader>p :!js-beautify % --replace --indent-size
 "markdown preview toggle
 nmap <space>m <Plug>MarkdownPreviewToggle
 " EASY MOTION
@@ -186,7 +186,7 @@ set splitbelow
 set splitright
 set conceallevel=0
 set hidden
-set updatetime=200
+set updatetime=100
 set wildignore+=node_modules/**,**/node_modules/**
 set wildignore+=**/build/**,build/**
 set linespace=1
