@@ -10,6 +10,7 @@ Plug 'nightsense/carbonized'
 Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 " END THEMES
+Plug 'mattn/webapi-vim' "some webapi thing..?
 Plug 'tweekmonster/django-plus.vim'
 Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
 Plug 'jeetsukumaran/vim-pythonsense' "add function/class text object for python
@@ -67,7 +68,8 @@ tnoremap jk <C-\><C-n>
 nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 "reformat python code with ,-b
 autocmd FileType python nnoremap <leader>p :Black<CR>
-autocmd FileType rust nnoremap <silent> <leader>p :!rustfmt %<CR>
+autocmd FileType rust nnoremap <silent> <leader>p :RustFmt<CR>
+autocmd FileType rust nnoremap <silent> <leader>b :RustRun<CR>
 autocmd FileType html,htmldjango,css noremap <leader>p :!js-beautify % --replace --indent-size
 "markdown preview toggle
 nmap <space>m <Plug>MarkdownPreviewToggle
