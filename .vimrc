@@ -112,6 +112,7 @@ noremap <silent> <C-Left> :vertical resize +3<CR>
 noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
+let NERDTreeIgnore = ['\.pyc$']
 " Open NERDTree in the directory of the current file (or /home if no file is open)
 nmap <silent> <C-n> :call NERDTreeToggleInCurDir()<CR>
 function! NERDTreeToggleInCurDir()
@@ -136,7 +137,7 @@ endfunction
 noremap <leader>l :TagbarToggle<CR>
 "start fzf
 noremap <C-p> :FZF<CR>
-let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,target/*,.git/*,**.pyc}"'
+let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,target/*,.git/*,**/*.pyc}"'
 "ctrl-b to run python script
 autocmd FileType python noremap <C-b> :!python %<CR>
 autocmd FileType rust noremap <C-b> :!cargo run<CR>
