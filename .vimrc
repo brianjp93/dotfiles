@@ -11,11 +11,10 @@ Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 " END THEMES
 Plug 'tweekmonster/django-plus.vim'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'} "multiple cursors
 Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
 Plug 'jeetsukumaran/vim-pythonsense' "add function/class text object for python
-Plug 'michaeljsmith/vim-indent-object' "add vim-text-objects for indentation
 Plug 'rust-lang/rust.vim' "rust language definitions
-Plug 'easymotion/vim-easymotion' "move around in document with new motions
 Plug 'mbbill/undotree' "undo tree
 Plug 'psliwka/vim-smoothie' " smooth scrolling
 Plug 'matze/vim-move' "move blocks of code
@@ -40,7 +39,6 @@ Plug 'airblade/vim-gitgutter' "show git changes
 Plug 'vim-python/python-syntax' "python syntax
 Plug 'tpope/vim-unimpaired' "searching easier
 Plug 'vim-scripts/mru.vim' "view recent files
-Plug 'terryma/vim-multiple-cursors' "sublime style multi cursors
 Plug 'ryanoasis/vim-devicons' "enable icon font from nerd fonts
 Plug 'psf/black', { 'branch': 'stable' } "python formatting
 Plug 'ap/vim-css-color' "show color when writing hex colors/rgb
@@ -67,7 +65,8 @@ tnoremap jk <C-\><C-n>
 nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 "reformat python code with ,-b
 autocmd FileType python nnoremap <leader>p :Black<CR>
-autocmd FileType rust nnoremap <silent> <leader>p :!rustfmt %<CR>
+autocmd FileType rust nnoremap <silent> <leader>p :RustFmt<CR>
+autocmd FileType rust nnoremap <silent> <leader>b :RustRun<CR>
 autocmd FileType html,htmldjango,css noremap <leader>p :!js-beautify % --replace --indent-size
 "markdown preview toggle
 nmap <space>m <Plug>MarkdownPreviewToggle
@@ -151,17 +150,6 @@ let g:rg_command = 'rg --vimgrep -S --glob "!{**/migrations/**.py}"'
 "vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal = 0
-"multiple curors keybinds
-let g:multi_cursor_use_default_mapping=0
-"Default mapping
-let g:multi_cursor_start_word_key      = '<C-x>'
-let g:multi_cursor_select_all_word_key = '<A-x>'
-let g:multi_cursor_start_key           = 'g<C-x>'
-let g:multi_cursor_select_all_key      = 'g<A-x>'
-let g:multi_cursor_next_key            = '<C-x>'
-let g:multi_cursor_prev_key            = '<C-p>'
-let g:multi_cursor_skip_key            = '<C-s>'
-let g:multi_cursor_quit_key            = '<Esc>'
 let g:tagbar_autofocus=1
 let g:tagbar_sort=0
 let g:indent_guides_auto_colors = 1
