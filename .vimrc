@@ -136,7 +136,7 @@ endfunction
 noremap <leader>l :TagbarToggle<CR>
 "start fzf
 noremap <C-p> :FZF<CR>
-noremap <leader>f :Ag<CR>
+noremap <leader>f :Ag!<CR>
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,target/*,.git/*,**/*.pyc}"'
 "ctrl-b to run python script
 autocmd FileType python noremap <C-b> :!python %<CR>
@@ -255,3 +255,11 @@ endfunction
 
 nnoremap <leader>c :call NextColor()<CR>
 " ------ END CYCLE THEMES ------
+
+"Ag customization
+command! -bang -nargs=* Ag
+\ call fzf#vim#ag(<q-args>,
+\                 <bang>0 ? fzf#vim#with_preview('up:60%')
+\                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+\                 <bang>0)
+"Ag customization end
