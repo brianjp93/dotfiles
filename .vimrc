@@ -39,7 +39,6 @@ Plug 'maxmellon/vim-jsx-pretty' "syntax highlighting for react
 Plug 'airblade/vim-gitgutter' "show git changes
 Plug 'vim-python/python-syntax' "python syntax
 Plug 'tpope/vim-unimpaired' "searching easier
-Plug 'vim-scripts/mru.vim' "view recent files
 Plug 'ryanoasis/vim-devicons' "enable icon font from nerd fonts
 Plug 'psf/black', { 'branch': 'stable' } "python formatting
 Plug 'ap/vim-css-color' "show color when writing hex colors/rgb
@@ -103,7 +102,7 @@ nnoremap <silent> <leader>gl :Git log<CR>
 nnoremap <silent> <leader>gc :GBranches<CR>
 
 nnoremap <leader><space> :nohlsearch<CR>
-nnoremap <silent> <leader>m :MRU<CR>
+nnoremap <silent> <leader>m :History<CR>
 "Enter normal mode in terminal by hitting jk
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -139,7 +138,7 @@ endfunction
 noremap <leader>l :TagbarToggle<CR>
 "start fzf
 noremap <C-p> :FZF<CR>
-noremap <leader>f :Ag!<CR>
+noremap <leader>f :PRg!<CR>
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,target/*,.git/*,**/*.pyc}"'
 "ctrl-b to run python script
 autocmd FileType python noremap <C-b> :!python %<CR>
@@ -259,11 +258,13 @@ endfunction
 nnoremap <leader>c :call NextColor()<CR>
 " ------ END CYCLE THEMES ------
 
-"Ag customization
-command! -bang -nargs=* Ag
-\ call fzf#vim#ag(<q-args>,
+"Rg customization
+command! -bang -nargs=* PRg
+\ call fzf#vim#grep('rg --column --no-heading --line-number --color=always '.shellescape(<q-args>),
 \                 '-S',
-\                 <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+\                 <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'})
 \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
 \                 <bang>0)
-"Ag customization end
+"Rg customization end
+
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.7, 'highlight': 'Todo', 'border': 'rounded' } }
