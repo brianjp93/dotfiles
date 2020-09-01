@@ -11,7 +11,6 @@ Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 " END THEMES
 Plug 'tweekmonster/django-plus.vim'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'} "multiple cursors
 Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
 Plug 'jeetsukumaran/vim-pythonsense' "add function/class text object for python
 Plug 'rust-lang/rust.vim' "rust language definitions
