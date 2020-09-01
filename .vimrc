@@ -68,14 +68,6 @@ autocmd FileType python nnoremap <leader>p :Black<CR>
 autocmd FileType rust nnoremap <silent> <leader>p :RustFmt<CR>
 autocmd FileType rust nnoremap <silent> <leader>b :RustRun<CR>
 autocmd FileType html,htmldjango,css noremap <leader>p :!js-beautify % --replace --indent-size
-"markdown preview toggle
-nmap <space>m <Plug>MarkdownPreviewToggle
-" EASY MOTION
-" s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
-" Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
 "------ COC ------
 nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>gr <Plug>(coc-references)
@@ -100,6 +92,10 @@ nnoremap <silent> <leader>d :Gdiff<CR>
 nnoremap <silent> <leader>gb :Git blame<CR>
 nnoremap <silent> <leader>gl :Git log<CR>
 nnoremap <silent> <leader>gc :GBranches<CR>
+
+"tabs
+nnoremap <leader>tn :tabnew<CR>
+nnoremap <leader>tc :tabclose<CR>
 
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <silent> <leader>m :History<CR>
