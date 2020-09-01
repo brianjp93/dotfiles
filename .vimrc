@@ -12,7 +12,6 @@ Plug 'kristijanhusak/vim-hybrid-material'
 " END THEMES
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'} "multiple cursors
 Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
 Plug 'jeetsukumaran/vim-pythonsense' "add function/class text object for python
 Plug 'rust-lang/rust.vim' "rust language definitions
@@ -28,6 +27,7 @@ Plug 'tpope/vim-surround' "surrounding text with quotes or tags etc...
 Plug 'tpope/vim-repeat' "enables repeat with . for some plugins
 Plug 'mattn/emmet-vim' "emmet for HTML tags
 Plug 'junegunn/fzf' "fuzzy finder for files
+Plug 'junegunn/fzf.vim' "for some reason i need this idk
 Plug 'jremmen/vim-ripgrep' "fast searching
 Plug 'tpope/vim-commentary' "easy commenting
 Plug 'tpope/vim-fugitive' "git integration
@@ -139,6 +139,7 @@ endfunction
 noremap <leader>l :TagbarToggle<CR>
 "start fzf
 noremap <C-p> :FZF<CR>
+noremap <leader>f :Ag!<CR>
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,target/*,.git/*,**/*.pyc}"'
 "ctrl-b to run python script
 autocmd FileType python noremap <C-b> :!python %<CR>
@@ -257,3 +258,12 @@ endfunction
 
 nnoremap <leader>c :call NextColor()<CR>
 " ------ END CYCLE THEMES ------
+
+"Ag customization
+command! -bang -nargs=* Ag
+\ call fzf#vim#ag(<q-args>,
+\                 '-S',
+\                 <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+\                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+\                 <bang>0)
+"Ag customization end
