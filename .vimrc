@@ -26,7 +26,7 @@ Plug 'yggdroot/indentline' "clean indentline
 Plug 'tpope/vim-surround' "surrounding text with quotes or tags etc...
 Plug 'tpope/vim-repeat' "enables repeat with . for some plugins
 Plug 'mattn/emmet-vim' "emmet for HTML tags
-Plug 'junegunn/fzf' "fuzzy finder for files
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "fuzzy finder for files
 Plug 'junegunn/fzf.vim' "for some reason i need this idk
 Plug 'jremmen/vim-ripgrep' "fast searching
 Plug 'tpope/vim-commentary' "easy commenting
