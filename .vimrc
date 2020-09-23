@@ -44,8 +44,6 @@ Plug 'tpope/vim-unimpaired' "searching easier
 Plug 'ryanoasis/vim-devicons' "enable icon font from nerd fonts
 Plug 'psf/black', { 'branch': 'stable' } "python formatting
 Plug 'ap/vim-css-color' "show color when writing hex colors/rgb
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  } "show markdown preview
-Plug 'godlygeek/tabular' "required for vim-markdown?
 Plug 'plasticboy/vim-markdown' "markdown syntax highlighting
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
