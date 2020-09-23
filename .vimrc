@@ -25,6 +25,8 @@ Plug 'vim-airline/vim-airline' "statusline at bottom
 Plug 'yggdroot/indentline' "clean indentline
 Plug 'tpope/vim-surround' "surrounding text with quotes or tags etc...
 Plug 'tpope/vim-repeat' "enables repeat with . for some plugins
+Plug 'tpope/vim-dadbod' "helper for commmunicating with DBs
+Plug 'kristijanhusak/vim-dadbod-ui' "dadbod ui
 Plug 'mattn/emmet-vim' "emmet for HTML tags
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "fuzzy finder for files
 Plug 'junegunn/fzf.vim' "for some reason i need this idk
