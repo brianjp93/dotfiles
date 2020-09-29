@@ -10,6 +10,7 @@ Plug 'nightsense/carbonized'
 Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 " END THEMES
+Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
 Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
