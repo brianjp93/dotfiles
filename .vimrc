@@ -214,11 +214,7 @@ endif
 
 " COLORSCHEME
 set bg=dark
-let g:gruvbox_contrast_dark='medium'
-let g:gruvbox_contrast_light='medium'
-" colorscheme gruvbox
-" colorscheme onedark
-colorscheme deus
+colorscheme forest-night
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
@@ -232,7 +228,7 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
-" ------ CYCLE THEMES WITH <A-C> ------
+" ------ CYCLE THEMES WITH <,-C> ------
 let s:mycolors = ['deus', 'gruvbox8_soft',  'forest-night', 'onedark', 'carbonized-light']  " colorscheme names that we use to set color
 
 function! NextColor()
