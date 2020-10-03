@@ -1,7 +1,8 @@
 echo '>^.^<'
 call plug#begin()
 " THEMES
-Plug 'gruvbox-community/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
+Plug 'lifepillar/vim-gruvbox8'
 Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
@@ -9,8 +10,8 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'nightsense/carbonized'
 Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'sainnhe/forest-night'
 " END THEMES
-Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
 Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
@@ -232,7 +233,7 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 
 " ------ CYCLE THEMES WITH <A-C> ------
-let s:mycolors = ['deus', 'gruvbox', 'onedark', 'carbonized-light']  " colorscheme names that we use to set color
+let s:mycolors = ['deus', 'gruvbox8_soft',  'forest-night', 'onedark', 'carbonized-light']  " colorscheme names that we use to set color
 
 function! NextColor()
   call s:NextColor()
@@ -241,7 +242,7 @@ endfunction
 function! s:NextColor()
   let current = index(s:mycolors, g:colors_name)
   let go_next = 1
-  if index(['gruvbox'], g:colors_name) >= 0
+  if index(['gruvbox8_soft'], g:colors_name) >= 0
     if &background == 'dark'
       let go_next = 0
       execute 'set bg=light'
