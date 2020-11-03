@@ -24,6 +24,7 @@ Plug 'wellle/targets.vim' "new text objects
 Plug 'scrooloose/nerdtree' "file directory
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocomplete for many languages
 Plug 'vim-airline/vim-airline' "statusline at bottom
+Plug 'vim-airline/vim-airline-themes' "airline themes
 Plug 'yggdroot/indentline' "clean indentline
 Plug 'tpope/vim-surround' "surrounding text with quotes or tags etc...
 Plug 'tpope/vim-repeat' "enables repeat with . for some plugins
@@ -35,7 +36,6 @@ Plug 'junegunn/fzf.vim' "for some reason i need this idk
 Plug 'jremmen/vim-ripgrep' "fast searching
 Plug 'tpope/vim-commentary' "easy commenting
 Plug 'tpope/vim-fugitive' "git integration
-Plug 'vim-airline/vim-airline-themes' "airline themes
 Plug 'majutsushi/tagbar' "tagbar
 Plug 'jiangmiao/auto-pairs' "autoclose parens
 Plug 'yuezk/vim-js' "better js highlighting
@@ -98,6 +98,8 @@ nnoremap <silent> <leader>gc :GBranches<CR>
 "tabs
 nnoremap <leader>tn :tabnew<CR>
 nnoremap <leader>tc :tabclose<CR>
+nnoremap <leader>tl :tabm +1<CR>
+nnoremap <leader>th :tabm -1<CR>
 
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <silent> <leader>m :History<CR>
@@ -215,6 +217,7 @@ endif
 " COLORSCHEME
 set bg=dark
 colorscheme forest-night
+let g:airline_theme='zenburn'
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
