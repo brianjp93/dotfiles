@@ -66,10 +66,10 @@ tnoremap jk <C-\><C-n>
 "undotree toggle and attempt to focus the split
 nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 "reformat python code with ,-b
-autocmd FileType python nnoremap <leader>p :Black<CR>
-autocmd FileType rust nnoremap <silent> <leader>p :RustFmt<CR>
-autocmd FileType rust nnoremap <silent> <leader>b :RustRun<CR>
-autocmd FileType html,htmldjango,css noremap <leader>p :!js-beautify % --replace --indent-size
+autocmd FileType python nnoremap <buffer> <leader>p :Black<CR>
+autocmd FileType rust nnoremap <buffer> <silent> <leader>p :RustFmt<CR>
+autocmd FileType rust nnoremap <buffer> <silent> <leader>b :RustRun<CR>
+autocmd FileType html,htmldjango,css noremap <buffer> <leader>p :!js-beautify % --replace --indent-size
 "------ COC ------
 nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>gr <Plug>(coc-references)
@@ -141,8 +141,9 @@ noremap <C-p> :FZF<CR>
 noremap <leader>f :PRg!<CR>
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,target/*,.git/*,**/*.pyc}"'
 "ctrl-b to run python script
-autocmd FileType python noremap <C-b> :!python %<CR>
-autocmd FileType rust noremap <C-b> :!cargo run<CR>
+autocmd FileType python noremap <buffer> <C-b> :!python %<CR>
+autocmd FileType rust noremap <buffer> <C-b> :!cargo run<CR>
+autocmd FileType javascript noremap <buffer> <C-b> :!node %<CR>
 
 "bold
 let g:enable_bold_font = 1
@@ -196,7 +197,7 @@ set inccommand=nosplit
 set hlsearch
 set clipboard=unnamed
 set ignorecase smartcase
-set cursorline
+" set cursorline
 set encoding=utf-8
 set mouse=a
 set lazyredraw "don't redraw while executing macros
