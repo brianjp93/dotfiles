@@ -68,7 +68,7 @@ nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 "reformat python code with ,-b
 autocmd FileType python nnoremap <buffer> <leader>p :Black<CR>
 autocmd FileType rust nnoremap <buffer> <silent> <leader>p :RustFmt<CR>
-autocmd FileType rust nnoremap <buffer> <silent> <leader>b :RustRun<CR>
+" autocmd FileType rust nnoremap <buffer> <silent> <leader>b :RustRun<CR>
 autocmd FileType html,htmldjango,css noremap <buffer> <leader>p :!js-beautify % --replace --indent-size
 "------ COC ------
 nmap <silent> <leader>gd <Plug>(coc-definition)
@@ -143,6 +143,7 @@ let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migra
 "ctrl-b to run python script
 autocmd FileType python noremap <buffer> <C-b> :!python %<CR>
 autocmd FileType rust noremap <buffer> <C-b> :!cargo run<CR>
+autocmd FileType rust noremap <buffer> <leader>b :!cargo run --bin %:t:r<CR>
 autocmd FileType javascript noremap <buffer> <C-b> :!node %<CR>
 
 "bold
