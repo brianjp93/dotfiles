@@ -143,7 +143,6 @@ let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migra
 "ctrl-b to run python script
 autocmd FileType python noremap <buffer> <C-b> :!python %<CR>
 autocmd FileType rust noremap <buffer> <C-b> :!cargo run<CR>
-autocmd FileType rust noremap <buffer> ,<b> :!cargo run --bin %<CR>
 autocmd FileType javascript noremap <buffer> <C-b> :!node %<CR>
 
 "bold
