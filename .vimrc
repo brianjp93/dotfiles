@@ -12,6 +12,7 @@ Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sainnhe/forest-night'
 " END THEMES
+Plug 'webdevel/tabulous' "better tab names
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
 Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
@@ -139,7 +140,7 @@ noremap <leader>l :TagbarToggle<CR>
 "start fzf
 noremap <C-p> :FZF<CR>
 noremap <leader>f :PRg!<CR>
-let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,target/*,.git/*,**/*.pyc}"'
+let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,target/*,**/target/**,.git/*,**/*.pyc,**/tests/**}"'
 "ctrl-b to run python script
 autocmd FileType python noremap <buffer> <C-b> :!python %<CR>
 autocmd FileType rust noremap <buffer> <C-b> :!cargo run<CR>
@@ -205,6 +206,7 @@ set lazyredraw "don't redraw while executing macros
 set fileformats=unix,dos,mac
 autocmd BufNewFile,BufRead *.html set filetype=htmldjango
 syntax on
+syntax sync fromstart
 
 try
     set undodir=~/temp/vimundo
