@@ -102,6 +102,8 @@ nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>tl :tabm +1<CR>
 nnoremap <leader>th :tabm -1<CR>
 
+nnoremap <silent> <leader>tt :CocCommand terminal.Toggle<CR>
+
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <silent> <leader>m :History<CR>
 "Enter normal mode in terminal by hitting jk
