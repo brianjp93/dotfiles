@@ -12,6 +12,7 @@ Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sainnhe/forest-night'
 " END THEMES
+Plug 'posva/vim-vue' "vue syntax
 Plug 'webdevel/tabulous' "better tab names
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
@@ -177,7 +178,7 @@ set magic               "extended regex
 set nobackup
 set nowritebackup
 set noswapfile
-set relativenumber
+set norelativenumber
 set number
 set scrolloff=2
 set splitbelow
