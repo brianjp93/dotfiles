@@ -12,6 +12,7 @@ Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sainnhe/forest-night'
 " END THEMES
+Plug 'vim-jp/vim-cpp' "c/cpp syntax
 Plug 'posva/vim-vue' "vue syntax
 Plug 'webdevel/tabulous' "better tab names
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
