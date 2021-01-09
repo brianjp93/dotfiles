@@ -150,6 +150,7 @@ autocmd FileType python noremap <buffer> <C-b> :!python %<CR>
 autocmd FileType rust noremap <buffer> <C-b> :!cargo run<CR>
 autocmd FileType rust noremap <buffer> <leader>b :!cargo run --bin %:t:r<CR>
 autocmd FileType javascript noremap <buffer> <C-b> :!node %<CR>
+autocmd FileType cpp noremap <buffer> <C-b> :!gcc % && ./a.out<CR>
 
 "bold
 let g:enable_bold_font = 1
