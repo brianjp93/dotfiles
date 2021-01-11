@@ -12,6 +12,7 @@ Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sainnhe/forest-night'
 " END THEMES
+Plug 'vim-jp/vim-cpp' "c/cpp syntax
 Plug 'posva/vim-vue' "vue syntax
 " Plug 'leafOfTree/vim-vue-plugin'
 Plug 'webdevel/tabulous' "better tab names
@@ -150,6 +151,7 @@ autocmd FileType python noremap <buffer> <C-b> :!python %<CR>
 autocmd FileType rust noremap <buffer> <C-b> :!cargo run<CR>
 autocmd FileType rust noremap <buffer> <leader>b :!cargo run --bin %:t:r<CR>
 autocmd FileType javascript noremap <buffer> <C-b> :!node %<CR>
+autocmd FileType cpp noremap <buffer> <C-b> :!gcc % && ./a.out<CR>
 
 "bold
 let g:enable_bold_font = 1
