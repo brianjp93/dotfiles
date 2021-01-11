@@ -13,6 +13,7 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sainnhe/forest-night'
 " END THEMES
 Plug 'posva/vim-vue' "vue syntax
+" Plug 'leafOfTree/vim-vue-plugin'
 Plug 'webdevel/tabulous' "better tab names
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
@@ -38,7 +39,7 @@ Plug 'junegunn/fzf.vim' "for some reason i need this idk
 Plug 'jremmen/vim-ripgrep' "fast searching
 Plug 'tpope/vim-commentary' "easy commenting
 Plug 'tpope/vim-fugitive' "git integration
-Plug 'majutsushi/tagbar' "tagbar
+Plug 'liuchengxu/vista.vim' "tagbar alternative
 Plug 'jiangmiao/auto-pairs' "autoclose parens
 Plug 'yuezk/vim-js' "better js highlighting
 Plug 'maxmellon/vim-jsx-pretty' "syntax highlighting for react
@@ -139,7 +140,7 @@ function! NERDTreeToggleInCurDir()
   endif
 endfunction
 "open tagbar with ,-l
-noremap <leader>l :TagbarToggle<CR>
+noremap <leader>l :Vista!!<CR>
 "start fzf
 noremap <C-p> :FZF<CR>
 noremap <leader>f :PRg!<CR>
@@ -159,9 +160,11 @@ let g:rg_command = 'rg --vimgrep -S --glob "!{**/migrations/**.py}"'
 "vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal = 0
-let g:tagbar_autofocus=1
-let g:tagbar_sort=0
-let g:tagbar_foldlevel=0
+
+" vista
+let g:vista_sidebar_width = 40
+let g:vista_default_executive = 'coc'
+
 let g:indent_guides_auto_colors = 1
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
