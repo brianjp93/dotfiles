@@ -12,6 +12,7 @@ Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sainnhe/forest-night'
 " END THEMES
+Plug 'mg979/vim-visual-multi' "sublime style multiple cursors
 Plug 'vim-jp/vim-cpp' "c/cpp syntax
 Plug 'posva/vim-vue' "vue syntax
 Plug 'webdevel/tabulous' "better tab names
