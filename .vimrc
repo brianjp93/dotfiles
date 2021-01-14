@@ -21,7 +21,7 @@ Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
 Plug 'jeetsukumaran/vim-pythonsense' "add function/class text object for python
 Plug 'rust-lang/rust.vim' "rust language definitions
 Plug 'mbbill/undotree' "undo tree
-Plug 'psliwka/vim-smoothie' " smooth scrolling
+" Plug 'psliwka/vim-smoothie' " smooth scrolling
 Plug 'matze/vim-move' "move blocks of code
 Plug 'wellle/targets.vim' "new text objects
 Plug 'scrooloose/nerdtree' "file directory
