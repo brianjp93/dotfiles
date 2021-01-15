@@ -3,6 +3,22 @@ filetype off
 syntax on
 filetype plugin indent on
 
+call plug#begin()
+Plug 'sainnhe/forest-night'
+Plug 'jeetsukumaran/vim-pythonsense' "add function/class text object for python
+Plug 'wellle/targets.vim' "new text objects
+Plug 'scrooloose/nerdtree' "file directory
+Plug 'yggdroot/indentline' "clean indentline
+Plug 'tpope/vim-surround' "surrounding text with quotes or tags etc...
+Plug 'tpope/vim-repeat' "enables repeat with . for some plugins
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "fuzzy finder for files
+Plug 'junegunn/fzf.vim' "for some reason i need this idk
+Plug 'jremmen/vim-ripgrep' "fast searching
+Plug 'tpope/vim-commentary' "easy commenting
+Plug 'vim-python/python-syntax' "python syntax
+
+j
+
 set number
 set encoding=utf-8
 set tabstop=4
@@ -60,6 +76,13 @@ if has('termguicolors')
     set termguicolors
 endif
 
+
+let NERDTreeIgnore = ['\.pyc$']
+" Open NERDTree in the directory of the current file (or /home if no file is open)
+nmap <silent> <C-n> :NERDTreeToggle<CR>
+
+let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,.git/*,**/*.pyc}"'
+noremap <C-p> :FZF<CR> 
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
