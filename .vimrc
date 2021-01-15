@@ -16,8 +16,9 @@ Plug 'junegunn/fzf.vim' "for some reason i need this idk
 Plug 'jremmen/vim-ripgrep' "fast searching
 Plug 'tpope/vim-commentary' "easy commenting
 Plug 'vim-python/python-syntax' "python syntax
+call plug#end()
 
-j
+colorscheme=forest-night
 
 set number
 set encoding=utf-8
