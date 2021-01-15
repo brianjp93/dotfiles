@@ -18,7 +18,7 @@ Plug 'tpope/vim-commentary' "easy commenting
 Plug 'vim-python/python-syntax' "python syntax
 call plug#end()
 
-colorscheme=forest-night
+colorscheme forest-night
 
 set number
 set encoding=utf-8
