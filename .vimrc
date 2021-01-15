@@ -73,17 +73,15 @@ set ignorecase smartcase
 set mouse=a
 set lazyredraw "don't redraw while executing macros
 
-if has('termguicolors')
-    set termguicolors
-endif
-
+set background=dark
+colorscheme forest-night
 
 let NERDTreeIgnore = ['\.pyc$']
 " Open NERDTree in the directory of the current file (or /home if no file is open)
 nmap <silent> <C-n> :NERDTreeToggle<CR>
 
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,.git/*,**/*.pyc}"'
-noremap <C-p> :FZF<CR> 
+noremap <C-p> :FZF<CR>
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
