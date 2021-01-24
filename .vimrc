@@ -20,6 +20,7 @@ Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
 Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
 Plug 'jeetsukumaran/vim-pythonsense' "add function/class text object for python
+Plug 'szw/vim-maximizer' "f3 to maximize and reset windows
 Plug 'rust-lang/rust.vim' "rust language definitions
 Plug 'mbbill/undotree' "undo tree
 " Plug 'psliwka/vim-smoothie' " smooth scrolling
