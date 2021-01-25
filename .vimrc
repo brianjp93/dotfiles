@@ -1,7 +1,6 @@
 echo '>^.^<'
 call plug#begin()
 " THEMES
-" Plug 'gruvbox-community/gruvbox'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
@@ -14,8 +13,6 @@ Plug 'sainnhe/forest-night'
 " END THEMES
 " Plug 'mg979/vim-visual-multi' "sublime style multiple cursors
 Plug 'sheerun/vim-polyglot'
-" Plug 'vim-jp/vim-cpp' "c/cpp syntax
-" Plug 'posva/vim-vue' "vue syntax
 Plug 'webdevel/tabulous' "better tab names
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
@@ -24,7 +21,6 @@ Plug 'jeetsukumaran/vim-pythonsense' "add function/class text object for python
 Plug 'szw/vim-maximizer' "f3 to maximize and reset windows
 Plug 'rust-lang/rust.vim' "rust language definitions
 Plug 'mbbill/undotree' "undo tree
-" Plug 'psliwka/vim-smoothie' " smooth scrolling
 Plug 'matze/vim-move' "move blocks of code
 Plug 'wellle/targets.vim' "new text objects
 Plug 'scrooloose/nerdtree' "file directory
@@ -44,15 +40,11 @@ Plug 'tpope/vim-commentary' "easy commenting
 Plug 'tpope/vim-fugitive' "git integration
 Plug 'majutsushi/tagbar' "tagbar
 Plug 'jiangmiao/auto-pairs' "autoclose parens
-" Plug 'yuezk/vim-js' "better js highlighting
-" Plug 'maxmellon/vim-jsx-pretty' "syntax highlighting for react
 Plug 'airblade/vim-gitgutter' "show git changes
-" Plug 'vim-python/python-syntax' "python syntax
 Plug 'tpope/vim-unimpaired' "searching easier
 Plug 'ryanoasis/vim-devicons' "enable icon font from nerd fonts
 Plug 'psf/black', { 'branch': 'stable' } "python formatting
 Plug 'ap/vim-css-color' "show color when writing hex colors/rgb
-" Plug 'plasticboy/vim-markdown' "markdown syntax highlighting
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml'] } "js/ts/css/json/markdown... formatting
