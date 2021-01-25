@@ -56,6 +56,10 @@ set ignorecase smartcase
 set mouse=a
 set lazyredraw "don't redraw while executing macros
 
+if has('termguicolors')
+    set termguicolors
+endif
+
 "Fix weird colors in tmux
 if &term =~ '256color'
     set t_ut=
