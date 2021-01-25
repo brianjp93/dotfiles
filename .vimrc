@@ -56,6 +56,11 @@ set ignorecase smartcase
 set mouse=a
 set lazyredraw "don't redraw while executing macros
 
+"Fix weird colors in tmux
+if &term =~ '256color'
+    set t_ut=
+endif
+
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
