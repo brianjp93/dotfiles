@@ -13,7 +13,6 @@ Plug 'sainnhe/forest-night'
 " END THEMES
 " Plug 'mg979/vim-visual-multi' "sublime style multiple cursors
 Plug 'sheerun/vim-polyglot' "language packs
-Plug 'tpope/vim-sleuth' "auto detect shiftwidth
 Plug 'webdevel/tabulous' "better tab names
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
