@@ -224,6 +224,11 @@ if has('termguicolors')
     set termguicolors
 endif
 
+"Fix weird colors in tmux
+if &term =~ '256color'
+    set t_ut=
+endif
+
 " COLORSCHEME
 set bg=dark
 colorscheme forest-night
