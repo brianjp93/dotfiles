@@ -13,8 +13,9 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sainnhe/forest-night'
 " END THEMES
 " Plug 'mg979/vim-visual-multi' "sublime style multiple cursors
-Plug 'vim-jp/vim-cpp' "c/cpp syntax
-Plug 'posva/vim-vue' "vue syntax
+Plug 'sheerun/vim-polyglot'
+" Plug 'vim-jp/vim-cpp' "c/cpp syntax
+" Plug 'posva/vim-vue' "vue syntax
 Plug 'webdevel/tabulous' "better tab names
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
@@ -43,15 +44,15 @@ Plug 'tpope/vim-commentary' "easy commenting
 Plug 'tpope/vim-fugitive' "git integration
 Plug 'majutsushi/tagbar' "tagbar
 Plug 'jiangmiao/auto-pairs' "autoclose parens
-Plug 'yuezk/vim-js' "better js highlighting
-Plug 'maxmellon/vim-jsx-pretty' "syntax highlighting for react
+" Plug 'yuezk/vim-js' "better js highlighting
+" Plug 'maxmellon/vim-jsx-pretty' "syntax highlighting for react
 Plug 'airblade/vim-gitgutter' "show git changes
-Plug 'vim-python/python-syntax' "python syntax
+" Plug 'vim-python/python-syntax' "python syntax
 Plug 'tpope/vim-unimpaired' "searching easier
 Plug 'ryanoasis/vim-devicons' "enable icon font from nerd fonts
 Plug 'psf/black', { 'branch': 'stable' } "python formatting
 Plug 'ap/vim-css-color' "show color when writing hex colors/rgb
-Plug 'plasticboy/vim-markdown' "markdown syntax highlighting
+" Plug 'plasticboy/vim-markdown' "markdown syntax highlighting
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml'] } "js/ts/css/json/markdown... formatting
