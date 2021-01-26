@@ -1,7 +1,7 @@
 echo '>^.^<'
 call plug#begin()
 " THEMES
-Plug 'lifepillar/vim-gruvbox8'
+Plug 'sainnhe/gruvbox-material'
 Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
@@ -225,6 +225,7 @@ endif
 
 " COLORSCHEME
 set bg=dark
+let g:gruvbox_material_background='soft'
 colorscheme forest-night
 let g:airline_theme='zenburn'
 
@@ -241,7 +242,7 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 
 " ------ CYCLE THEMES WITH <,-C> ------
-let s:mycolors = ['deus', 'gruvbox8_soft',  'forest-night', 'onedark', 'carbonized-light']  " colorscheme names that we use to set color
+let s:mycolors = ['deus', 'gruvbox-material',  'forest-night', 'onedark', 'carbonized-light']  " colorscheme names that we use to set color
 
 function! NextColor()
   call s:NextColor()
@@ -250,7 +251,7 @@ endfunction
 function! s:NextColor()
   let current = index(s:mycolors, g:colors_name)
   let go_next = 1
-  if index(['gruvbox8_soft'], g:colors_name) >= 0
+  if index(['gruvbox-material'], g:colors_name) >= 0
     if &background == 'dark'
       let go_next = 0
       execute 'set bg=light'
