@@ -12,6 +12,7 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sainnhe/forest-night'
 " END THEMES
 " Plug 'mg979/vim-visual-multi' "sublime style multiple cursors
+Plug 'tpope/vim-speeddating' "increment dates
 Plug 'vimwiki/vimwiki' "take some notes
 Plug 'sheerun/vim-polyglot' "language packs
 Plug 'webdevel/tabulous' "better tab names
