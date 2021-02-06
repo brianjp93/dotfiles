@@ -11,7 +11,6 @@ Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sainnhe/forest-night'
 " END THEMES
-" Plug 'mg979/vim-visual-multi' "sublime style multiple cursors
 Plug 'vimwiki/vimwiki' "take some notes
 Plug 'sheerun/vim-polyglot' "language packs
 Plug 'webdevel/tabulous' "better tab names
@@ -143,6 +142,7 @@ noremap <leader>f :PRg!<CR>
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,target/*,**/target/**,.git/*,**/*.pyc,**/tests/**}"'
 "ctrl-b to run python script
 autocmd FileType python noremap <buffer> <C-b> :!python %<CR>
+autocmd FileType r noremap <buffer> <C-b> :!Rscript %<CR>
 autocmd FileType rust noremap <buffer> <C-b> :!cargo run<CR>
 autocmd FileType rust noremap <buffer> <leader>b :!cargo run --bin %:t:r<CR>
 autocmd FileType javascript noremap <buffer> <C-b> :!node %<CR>
@@ -161,8 +161,7 @@ let g:tagbar_autofocus=1
 let g:tagbar_sort=0
 let g:tagbar_foldlevel=0
 let g:indent_guides_auto_colors = 1
-let g:indentLine_leadingSpaceChar = '·'
-let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_enabled = 1
 let g:indentLine_fileTypeExclude = ["tagbar", "markdown"]
 let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 let python_highlight_all=1
