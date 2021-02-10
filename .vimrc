@@ -11,6 +11,7 @@ Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sainnhe/forest-night'
 " END THEMES
+Plug 'godlygeek/tabular' "Tabularize
 Plug 'tpope/vim-speeddating' "increment dates
 Plug 'vimwiki/vimwiki' "take some notes
 Plug 'sheerun/vim-polyglot' "language packs
@@ -163,7 +164,7 @@ let g:tagbar_sort=0
 let g:tagbar_foldlevel=0
 let g:indent_guides_auto_colors = 1
 let g:indentLine_enabled = 1
-let g:indentLine_fileTypeExclude = ["tagbar", "markdown"]
+let g:indentLine_fileTypeExclude = ["tagbar", "markdown", 'vimwiki', 'dbout']
 let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 let python_highlight_all=1
 au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
