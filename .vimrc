@@ -11,6 +11,7 @@ Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sainnhe/forest-night'
 " END THEMES
+Plug 'mg979/vim-visual-multi' "multiple cursors
 Plug 'godlygeek/tabular' "Tabularize
 Plug 'tpope/vim-speeddating' "increment dates
 Plug 'vimwiki/vimwiki' "take some notes
@@ -110,11 +111,12 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-"remap resizing
-noremap <silent> <C-Left> :vertical resize +3<CR>
-noremap <silent> <C-Right> :vertical resize -3<CR>
-noremap <silent> <C-Up> :resize +3<CR>
-noremap <silent> <C-Down> :resize -3<CR>
+
+" visual multi maps
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<C-f>'
+let g:VM_maps['Find Subword Under'] = '<C-f>'
+
 let NERDTreeIgnore = ['\.pyc$']
 " Open NERDTree in the directory of the current file (or /home if no file is open)
 nmap <silent> <C-n> :call NERDTreeToggleInCurDir()<CR>
