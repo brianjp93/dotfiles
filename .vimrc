@@ -230,7 +230,7 @@ endif
 " COLORSCHEME
 set bg=dark
 let g:gruvbox_material_background='soft'
-colorscheme forest-night
+colorscheme gruvbox-material
 let g:airline_theme='zenburn'
 
 " use <tab> for trigger completion and navigate to the next complete item
