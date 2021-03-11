@@ -75,6 +75,16 @@ autocmd FileType html,htmldjango,css noremap <buffer> <leader>p :!js-beautify % 
 nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>gr <Plug>(coc-references)
 nmap <silent> <leader>gi <Plug>(coc-implementation)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
 " Find symbol of current document.
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<CR>
 " Search workspace symbols.
