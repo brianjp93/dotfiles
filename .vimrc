@@ -89,6 +89,7 @@ endfunction
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<CR>
 " Search workspace symbols.
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<CR>
+nnoremap <silent> <space>d :CocDiagnostics<CR>
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
 autocmd FileType javascript,rust,cpp,c xmap <buffer> if <Plug>(coc-funcobj-i)
