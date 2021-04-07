@@ -154,6 +154,14 @@ noremap <leader>l :TagbarToggle<CR>
 "start fzf
 noremap <C-p> :FZF<CR>
 noremap <leader>f :PRg!<CR>
+
+" jump to beginning or end of line using L and H
+" maybe one day I'll find a use for jumping to (H)igh and (L)ow
+nnoremap L $
+vnoremap L $
+nnoremap H ^
+vnoremap H ^
+
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,target/*,**/target/**,.git/*,**/*.pyc,**/tests/**}"'
 "ctrl-b to run python script
 autocmd FileType python noremap <buffer> <C-b> :!python %<CR>
