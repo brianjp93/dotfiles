@@ -50,7 +50,7 @@ Plug 'psf/black', { 'branch': 'stable' } "python formatting
 Plug 'ap/vim-css-color' "show color when writing hex colors/rgb
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
-  \ 'for': ['javascript', 'typescript', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml'] } "js/ts/css/json/markdown... formatting
+  \ 'for': ['javascript', 'typescript', 'typescriptreact', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml'] } "js/ts/css/json/markdown... formatting
 call plug#end()
 
 let mapleader = ","
