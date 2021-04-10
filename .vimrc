@@ -15,7 +15,9 @@ Plug 'mg979/vim-visual-multi' "multiple cursors
 Plug 'godlygeek/tabular' "Tabularize
 Plug 'tpope/vim-speeddating' "increment dates
 Plug 'vimwiki/vimwiki' "take some notes
-Plug 'sheerun/vim-polyglot' "language packs
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 Plug 'webdevel/tabulous' "better tab names
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
@@ -52,6 +54,17 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'typescriptreact', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml'] } "js/ts/css/json/markdown... formatting
 call plug#end()
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true
+  },
+  indent = {
+    enable = true
+  }
+}
+EOF
 
 let mapleader = ","
 let maplocalleader = "\\"
