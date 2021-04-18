@@ -107,14 +107,14 @@ nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<CR>
 nnoremap <silent> <space>d :CocDiagnostics<CR>
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-autocmd FileType javascript,rust,cpp,c xmap <buffer> if <Plug>(coc-funcobj-i)
-autocmd FileType javascript,rust,cpp,c omap <buffer> if <Plug>(coc-funcobj-i)
-autocmd FileType javascript,rust,cpp,c xmap <buffer> af <Plug>(coc-funcobj-a)
-autocmd FileType javascript,rust,cpp,c omap <buffer> af <Plug>(coc-funcobj-a)
-autocmd FileType javascript,rust,cpp,c xmap <buffer> ic <Plug>(coc-classobj-i)
-autocmd FileType javascript,rust,cpp,c omap <buffer> ic <Plug>(coc-classobj-i)
-autocmd FileType javascript,rust,cpp,c xmap <buffer> ac <Plug>(coc-classobj-a)
-autocmd FileType javascript,rust,cpp,c omap <buffer> ac <Plug>(coc-classobj-a)
+autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> if <Plug>(coc-funcobj-i)
+autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> if <Plug>(coc-funcobj-i)
+autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> af <Plug>(coc-funcobj-a)
+autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> af <Plug>(coc-funcobj-a)
+autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> ic <Plug>(coc-classobj-i)
+autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> ic <Plug>(coc-classobj-i)
+autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> ac <Plug>(coc-classobj-a)
+autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> ac <Plug>(coc-classobj-a)
 "------ END COC ------
 nnoremap <silent> <leader>s :G<CR>
 nnoremap <silent> <leader>d :Gdiff<CR>
