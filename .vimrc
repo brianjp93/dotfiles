@@ -19,12 +19,12 @@ Plug 'vimwiki/vimwiki' "take some notes
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
 " dependencies
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 " telescope
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 Plug 'webdevel/tabulous' "better tab names
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
@@ -71,44 +71,34 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+local actions = require('telescope.actions')
 require('telescope').setup{
   defaults = {
-    vimgrep_arguments = {
-      'rg',
-      '--color=never',
-      '--no-heading',
-      '--with-filename',
-      '--line-number',
-      '--column',
-      '--smart-case',
-    },
     initial_mode = "insert",
-    selection_strategy = "reset",
-    sorting_strategy = "descending",
-    layout_strategy = "horizontal",
-    file_sorter =  require'telescope.sorters'.get_fuzzy_file,
+    file_sorter =  require'telescope.sorters'.get_fzy_sorter,
     file_ignore_patterns = {".git/.*", ".*/migrations/.*", '.*/node_modules/.*'},
-    generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-    shorten_path = true,
-    winblend = 0,
-    width = 0.75,
-    preview_cutoff = 120,
-    results_height = 1,
-    results_width = 0.8,
-    border = {},
     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
     color_devicons = true,
-    use_less = true,
-    set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
+    promp_prefix = ' >',
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
-
-    -- Developer configurations: Not meant for general override
-    buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
+    mappings = {
+      i = {
+        ["c-x"] = false,
+        ["c-q"] = actions.send_to_qflist,
+      },
+    }
+  },
+  extensions = {
+    fzy_native = {
+      override_generic_sorter = false,
+      override_file_sorter = true,
+    }
   }
 }
 
+require('telescope').load_extension('fzy_native')
 require'lspconfig'.pyright.setup{}
 EOF
 
