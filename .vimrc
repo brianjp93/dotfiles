@@ -17,6 +17,14 @@ Plug 'tpope/vim-speeddating' "increment dates
 Plug 'vimwiki/vimwiki' "take some notes
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+" dependencies
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+" telescope
+Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'webdevel/tabulous' "better tab names
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
@@ -24,12 +32,10 @@ Plug 'tweekmonster/django-plus.vim'
 Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
 Plug 'jeetsukumaran/vim-pythonsense' "add function/class text object for python
 Plug 'szw/vim-maximizer' "f3 to maximize and reset windows
-Plug 'rust-lang/rust.vim' "rust language definitions
 Plug 'mbbill/undotree' "undo tree
 Plug 'matze/vim-move' "move blocks of code
 Plug 'wellle/targets.vim' "new text objects
 Plug 'scrooloose/nerdtree' "file directory
-Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocomplete for many languages
 Plug 'vim-airline/vim-airline' "statusline at bottom
 Plug 'vim-airline/vim-airline-themes' "airline themes
 Plug 'yggdroot/indentline' "clean indentline
@@ -38,8 +44,6 @@ Plug 'tpope/vim-repeat' "enables repeat with . for some plugins
 Plug 'tpope/vim-dadbod' "helper for commmunicating with DBs
 Plug 'kristijanhusak/vim-dadbod-ui' "dadbod ui
 Plug 'mattn/emmet-vim' "emmet for HTML tags
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "fuzzy finder for files
-Plug 'junegunn/fzf.vim' "for some reason i need this idk
 Plug 'jremmen/vim-ripgrep' "fast searching
 Plug 'tpope/vim-commentary' "easy commenting
 Plug 'tpope/vim-fugitive' "git integration
@@ -66,10 +70,57 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   },
 }
+
+require('telescope').setup{
+  defaults = {
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+    },
+    initial_mode = "insert",
+    selection_strategy = "reset",
+    sorting_strategy = "descending",
+    layout_strategy = "horizontal",
+    file_sorter =  require'telescope.sorters'.get_fuzzy_file,
+    file_ignore_patterns = {".git/.*", ".*/migrations/.*", '.*/node_modules/.*'},
+    generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
+    shorten_path = true,
+    winblend = 0,
+    width = 0.75,
+    preview_cutoff = 120,
+    results_height = 1,
+    results_width = 0.8,
+    border = {},
+    borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+    color_devicons = true,
+    use_less = true,
+    set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
+    file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
+    grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+    qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+
+    -- Developer configurations: Not meant for general override
+    buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
+  }
+}
+
+require'lspconfig'.pyright.setup{}
 EOF
 
 let mapleader = ","
 let maplocalleader = "\\"
+
+"Telescope
+nnoremap <c-p> <cmd>Telescope find_files find_command=rg,--hidden,--files<cr>
+nnoremap <leader>f <cmd>Telescope live_grep<cr>
+nnoremap <leader>h <cmd>Telescope help_tags<cr>
+nnoremap <leader>gc <cmd>Telescope git_branches<cr>
+
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>vv :source $MYVIMRC<CR>
 nnoremap <leader>j :Rg "<cword>"
@@ -86,49 +137,17 @@ autocmd FileType python nnoremap <buffer> <leader>p :Black<CR>
 autocmd FileType rust nnoremap <buffer> <silent> <leader>p :RustFmt<CR>
 " autocmd FileType rust nnoremap <buffer> <silent> <leader>b :RustRun<CR>
 autocmd FileType html,htmldjango,css noremap <buffer> <leader>p :!js-beautify % --replace --indent-size
-"------ COC ------
-nmap <silent> <leader>gd <Plug>(coc-definition)
-nmap <silent> <leader>gr <Plug>(coc-references)
-nmap <silent> <leader>gi <Plug>(coc-implementation)
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-" Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<CR>
-" Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<CR>
-nnoremap <silent> <space>d :CocDiagnostics<CR>
-" Map function and class text objects
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> if <Plug>(coc-funcobj-i)
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> if <Plug>(coc-funcobj-i)
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> af <Plug>(coc-funcobj-a)
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> af <Plug>(coc-funcobj-a)
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> ic <Plug>(coc-classobj-i)
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> ic <Plug>(coc-classobj-i)
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> ac <Plug>(coc-classobj-a)
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> ac <Plug>(coc-classobj-a)
-"------ END COC ------
+
 nnoremap <silent> <leader>s :G<CR>
 nnoremap <silent> <leader>d :Gdiff<CR>
 nnoremap <silent> <leader>gb :Git blame<CR>
 nnoremap <silent> <leader>gl :Git log<CR>
-nnoremap <silent> <leader>gc :GBranches<CR>
 
 "tabs
 nnoremap <leader>tn :tabnew<CR>
 nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>tl :tabm +1<CR>
 nnoremap <leader>th :tabm -1<CR>
-
-nnoremap <silent> <leader>tt :CocCommand terminal.Toggle<CR>
 
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <silent> <leader>m :History<CR>
@@ -166,9 +185,6 @@ function! NERDTreeToggleInCurDir()
 endfunction
 "open tagbar with ,-l
 noremap <leader>l :TagbarToggle<CR>
-"start fzf
-noremap <C-p> :FZF<CR>
-noremap <leader>f :PRg!<CR>
 
 " jump to beginning or end of line using L and H
 " maybe one day I'll find a use for jumping to (H)igh and (L)ow
@@ -267,20 +283,8 @@ let g:gruvbox_material_background='soft'
 colorscheme gruvbox-material
 let g:airline_theme='zenburn'
 
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-" press tab to iterate through autocomplete options
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
-
 " ------ CYCLE THEMES WITH <,-C> ------
-let s:mycolors = ['deus', 'gruvbox-material',  'forest-night', 'onedark', 'carbonized-light']  " colorscheme names that we use to set color
+let s:mycolors = ['deus', 'gruvbox-material',  'everforest', 'onedark', 'carbonized-light']  " colorscheme names that we use to set color
 
 function! NextColor()
   call s:NextColor()
