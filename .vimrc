@@ -17,6 +17,7 @@ Plug 'tpope/vim-speeddating' "increment dates
 Plug 'vimwiki/vimwiki' "take some notes
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 
 Plug 'webdevel/tabulous' "better tab names
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
