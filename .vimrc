@@ -19,6 +19,11 @@ Plug 'vimwiki/vimwiki' "take some notes
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
+" syntax not handled by treesitter
+Plug 'chrisbra/csv.vim'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'plasticboy/vim-markdown'
+
 Plug 'webdevel/tabulous' "better tab names
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
