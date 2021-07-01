@@ -287,7 +287,7 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 
 " ------ CYCLE THEMES WITH <,-C> ------
-let s:mycolors = ['deus', 'gruvbox-material',  'forest-night', 'onedark', 'carbonized-light']  " colorscheme names that we use to set color
+let s:mycolors = ['deus', 'gruvbox-material',  'everforest', 'onedark', 'carbonized-light']  " colorscheme names that we use to set color
 
 function! NextColor()
   call s:NextColor()
