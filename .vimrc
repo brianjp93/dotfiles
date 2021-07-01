@@ -15,6 +15,7 @@ Plug 'mg979/vim-visual-multi' "multiple cursors
 Plug 'godlygeek/tabular' "Tabularize
 Plug 'tpope/vim-speeddating' "increment dates
 Plug 'vimwiki/vimwiki' "take some notes
+Plug 'lervag/vimtex' "latex
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
