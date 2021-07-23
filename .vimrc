@@ -184,7 +184,7 @@ vnoremap L $
 nnoremap H ^
 vnoremap H ^
 
-let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,target/*,**/target/**,.git/*,**/*.pyc,**/tests/**}"'
+let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/.yarn/**,media/**, **/__pycache__/**,node_modules/*,*/node_modules/*,target/*,**/target/**,.git/*,**/*.pyc,**/tests/**}"'
 "ctrl-b to run python script
 autocmd FileType python noremap <buffer> <C-b> :!python %<CR>
 autocmd FileType r noremap <buffer> <C-b> :!Rscript %<CR>
@@ -198,7 +198,7 @@ let g:enable_bold_font = 1
 "italics
 let g:enable_italic_font = 1
 "searching
-let g:rg_command = 'rg --vimgrep -S --glob "!{**/migrations/**.py}"'
+let g:rg_command = 'rg --vimgrep -S --trim --glob "!{**/migrations/**.py}"'
 "vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal = 0
