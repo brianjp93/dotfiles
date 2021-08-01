@@ -15,6 +15,7 @@ Plug 'mg979/vim-visual-multi' "multiple cursors
 Plug 'godlygeek/tabular' "Tabularize
 Plug 'tpope/vim-speeddating' "increment dates
 Plug 'vimwiki/vimwiki' "take some notes
+Plug 'lervag/vimtex' "latex
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
@@ -186,7 +187,7 @@ vnoremap L $
 nnoremap H ^
 vnoremap H ^
 
-let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/__pycache__/**,node_modules/*,*/node_modules/*,target/*,**/target/**,.git/*,**/*.pyc,**/tests/**}"'
+let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/.yarn/**,media/**, **/__pycache__/**,node_modules/*,*/node_modules/*,target/*,**/target/**,.git/*,**/*.pyc,**/tests/**}"'
 "ctrl-b to run python script
 autocmd FileType python noremap <buffer> <C-b> :!python %<CR>
 autocmd FileType r noremap <buffer> <C-b> :!Rscript %<CR>
