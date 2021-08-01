@@ -66,7 +66,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "javascript", "typescript", "tsx", "html", "python",
     "bash", "ql", "rust", "cpp", "json", "jsonc", "vue", "yaml",
-    "css"
+    "css", "toml",
   },
   highlight = {
     enable = true
@@ -134,6 +134,9 @@ nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>tl :tabm +1<CR>
 nnoremap <leader>th :tabm -1<CR>
 
+nnoremap <space>fe :set foldenable<cr>
+nnoremap <space>fn :set nofoldenable<cr>
+
 nnoremap <silent> <leader>tt :CocCommand terminal.Toggle<CR>
 
 nnoremap <leader><space> :nohlsearch<CR>
@@ -197,7 +200,7 @@ let g:enable_bold_font = 1
 "italics
 let g:enable_italic_font = 1
 "searching
-let g:rg_command = 'rg --vimgrep -S --glob "!{**/migrations/**.py}"'
+let g:rg_command = 'rg --vimgrep -S --trim --glob "!{**/migrations/**.py}"'
 "vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal = 0
