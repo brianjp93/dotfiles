@@ -37,8 +37,8 @@ Plug 'matze/vim-move' "move blocks of code
 Plug 'wellle/targets.vim' "new text objects
 Plug 'scrooloose/nerdtree' "file directory
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocomplete for many languages
-Plug 'vim-airline/vim-airline' "statusline at bottom
-Plug 'vim-airline/vim-airline-themes' "airline themes
+Plug 'kosayoda/nvim-lightbulb'
+Plug 'beauwilliams/statusline.lua' "airline replacement
 Plug 'yggdroot/indentline' "clean indentline
 Plug 'tpope/vim-surround' "surrounding text with quotes or tags etc...
 Plug 'tpope/vim-repeat' "enables repeat with . for some plugins
@@ -73,6 +73,10 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   },
 }
+
+-- turn off tabline, it bugs out for me
+local statusline = require'statusline'
+statusline.tabline = false
 EOF
 
 let mapleader = ","
@@ -80,7 +84,6 @@ let maplocalleader = "\\"
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>vv :source $MYVIMRC<CR>
 nnoremap <leader>j :Rg "<cword>"
-nnoremap <leader>a :AirlineToggle<CR>
 " map emmet expand to alt-i
 inoremap <A-i> <esc>:call emmet#expandAbbr(3, "")<CR>i
 nnoremap <A-i> :call emmet#expandAbbr(3, "")<CR>
@@ -225,7 +228,7 @@ set nowritebackup
 set noswapfile
 set norelativenumber
 set number
-set scrolloff=2
+set scrolloff=3
 set splitbelow
 set splitright
 set conceallevel=0
@@ -254,7 +257,7 @@ set lazyredraw "don't redraw while executing macros
 set fileformats=unix,dos,mac
 autocmd BufNewFile,BufRead *.html set filetype=htmldjango
 syntax on
-syntax sync fromstart
+" syntax sync fromstart
 
 try
     set undodir=~/temp/vimundo
@@ -275,7 +278,6 @@ endif
 set bg=dark
 let g:gruvbox_material_background='soft'
 colorscheme gruvbox-material
-let g:airline_theme='zenburn'
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
