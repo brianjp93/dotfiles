@@ -55,7 +55,6 @@ Plug 'jiangmiao/auto-pairs' "autoclose parens
 Plug 'airblade/vim-gitgutter' "show git changes
 Plug 'tpope/vim-unimpaired' "searching easier
 Plug 'ryanoasis/vim-devicons' "enable icon font from nerd fonts
-Plug 'psf/black', { 'branch': 'stable' } "python formatting
 Plug 'ap/vim-css-color' "show color when writing hex colors/rgb
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
@@ -92,8 +91,8 @@ tnoremap jk <C-\><C-n>
 "undotree toggle and attempt to focus the split
 nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 "reformat python code with ,-b
-autocmd FileType python nnoremap <buffer> <leader>p :Black<CR>
-autocmd FileType rust nnoremap <buffer> <silent> <leader>p :RustFmt<CR>
+autocmd FileType python nnoremap <buffer> <leader>p :!black %<cr><bar>:w<cr><bar>:e<cr>
+autocmd FileType rust nnoremap <buffer> <silent> <leader>p :RustFmt<CR><bar>:w<cr><bar>:e<cr>
 " autocmd FileType rust nnoremap <buffer> <silent> <leader>b :RustRun<CR>
 autocmd FileType html,htmldjango,css noremap <buffer> <leader>p :!js-beautify % --replace --indent-size
 "------ COC ------
