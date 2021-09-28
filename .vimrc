@@ -37,7 +37,6 @@ Plug 'matze/vim-move' "move blocks of code
 Plug 'wellle/targets.vim' "new text objects
 Plug 'scrooloose/nerdtree' "file directory
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocomplete for many languages
-Plug 'kosayoda/nvim-lightbulb'
 Plug 'beauwilliams/statusline.lua' "airline replacement
 Plug 'yggdroot/indentline' "clean indentline
 Plug 'tpope/vim-surround' "surrounding text with quotes or tags etc...
