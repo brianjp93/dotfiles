@@ -192,13 +192,14 @@ vnoremap H ^
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/.yarn/**,media/**, **/__pycache__/**,node_modules/*,*/node_modules/*,target/*,**/target/**,.git/*,**/*.pyc,**/tests/**}"'
 
 " ctrl-b to run python script
-" create a file called .condaenv with the name of your conda environment to
+" create a file called .condaenv
 " activate it before running your python script
+" ex: source "/Users/brian/miniconda3/etc/profile.d/conda.sh" && conda activate py310
 if filereadable('.condaenv')
     let g:conda_env = readfile('.condaenv')[0]
-    autocmd FileType python noremap <buffer> <C-b> :execute ":sp <bar> ter conda activate " . g:conda_env . " && python %"<CR>
+    autocmd FileType python noremap <buffer> <C-b> :execute ":!" . g:conda_env . " && python %"<CR>
 else
-    autocmd FileType python noremap <buffer> <C-b> :ter python %<CR>
+    autocmd FileType python noremap <buffer> <C-b> :execute ":! python %"<CR>
 endif
 
 autocmd FileType r noremap <buffer> <C-b> :!Rscript %<CR>
