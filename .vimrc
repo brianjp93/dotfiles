@@ -25,6 +25,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'plasticboy/vim-markdown'
 
+Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'webdevel/tabulous' "better tab names
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
@@ -150,6 +151,17 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" jupyter / magma-nvim bindings
+
+nnoremap <expr>   <leader>r nvim_exec('MagmaEvaluateOperator', v:true)
+nnoremap <silent> <leader>rr :MagmaEvaluateLine<CR>
+xnoremap <silent> <leader>r  :<C-u>MagmaEvaluateVisual<CR>
+nnoremap <silent> <leader>rc :MagmaReevaluateCell<CR>
+nnoremap <silent> <leader>rd :MagmaDelete<CR>
+nnoremap <silent> <leader>ro :MagmaShowOutput<CR>
+
+let g:magma_automatically_open_output = v:true
+
 " visual multi maps
 let g:VM_maps = {}
 let g:VM_maps['Find Under']         = '<C-f>'
@@ -227,6 +239,7 @@ let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 let python_highlight_all=1
 au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
 
+set pyx=3
 set tags=./tags,tags
 set undolevels=999
 set showtabline=2
