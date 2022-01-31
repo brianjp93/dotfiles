@@ -26,7 +26,6 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'plasticboy/vim-markdown'
 
 Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'webdevel/tabulous' "better tab names
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
 Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
@@ -73,9 +72,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
--- turn off tabline, it bugs out for me
-local statusline = require'statusline'
-statusline.tabline = false
 EOF
 
 let mapleader = ","
