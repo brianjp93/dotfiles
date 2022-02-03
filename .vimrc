@@ -340,7 +340,7 @@ nnoremap <leader>c :call NextColor()<CR>
 
 "Rg customization
 command! -bang -nargs=* PRg
-\ call fzf#vim#grep('rg --column --no-heading --line-number --color=always '.shellescape(<q-args>),
+\ call fzf#vim#grep('rg --column --no-heading --line-number --color=always --glob "!{**/*.po}" '.shellescape(<q-args>),
 \                 '-S',
 \                 <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'})
 \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
