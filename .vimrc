@@ -37,7 +37,7 @@ Plug 'matze/vim-move' "move blocks of code
 Plug 'wellle/targets.vim' "new text objects
 Plug 'scrooloose/nerdtree' "file directory
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocomplete for many languages
-Plug 'beauwilliams/statusline.lua' "airline replacement
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'yggdroot/indentline' "clean indentline
 Plug 'tpope/vim-surround' "surrounding text with quotes or tags etc...
 Plug 'tpope/vim-repeat' "enables repeat with . for some plugins
@@ -72,6 +72,17 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+-- lualine setup
+require('lualine').setup{
+  tabline = {
+    lualine_a = {
+      {
+        'tabs',
+        mode = 2,
+      }
+    }
+  }
+}
 EOF
 
 let mapleader = ","
