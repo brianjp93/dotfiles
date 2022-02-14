@@ -25,6 +25,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'plasticboy/vim-markdown'
 
+Plug 'webdevel/tabulous' " better tab names, ability to rename
 Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
@@ -73,16 +74,7 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- lualine setup
-require('lualine').setup{
-  tabline = {
-    lualine_a = {
-      {
-        'tabs',
-        mode = 2,
-      }
-    }
-  }
-}
+require('lualine').setup()
 EOF
 
 let mapleader = ","
