@@ -91,6 +91,7 @@ inoremap jk <esc>
 tnoremap jk <C-\><C-n>
 "undotree toggle and attempt to focus the split
 nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
+nnoremap <leader>hu :GitGutterUndoHunk<CR>
 "reformat python code with ,-b
 autocmd FileType python nnoremap <buffer> <silent> <leader>p :w<cr>:!black %<cr>:e<cr>
 autocmd FileType rust nnoremap <buffer> <silent> <leader>p :RustFmt<cr>
