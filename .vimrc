@@ -95,6 +95,7 @@ nnoremap <leader>hu :GitGutterUndoHunk<CR>
 "reformat python code with ,-b
 autocmd FileType python nnoremap <buffer> <silent> <leader>p :w<cr>:!black %<cr>:e<cr>
 autocmd FileType rust nnoremap <buffer> <silent> <leader>p :RustFmt<cr>
+autocmd FileType prisma nnoremap <buffer> <silent> <leader>p :CocCommand editor.action.formatDocument<cr>
 autocmd FileType typescriptreact,typescript,javascript nnoremap <buffer> <silent> <leader>p :Prettier<cr>:w<cr>:e<cr>
 " autocmd FileType rust nnoremap <buffer> <silent> <leader>b :RustRun<CR>
 autocmd FileType html,htmldjango,css noremap <buffer> <leader>p :!js-beautify % --replace --indent-size
