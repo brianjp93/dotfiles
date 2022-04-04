@@ -25,6 +25,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'plasticboy/vim-markdown'
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'vim-denops/denops.vim'
 Plug 'skanehira/denops-docker.vim'
 Plug 'webdevel/tabulous' " better tab names, ability to rename
