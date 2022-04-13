@@ -27,6 +27,7 @@ Plug 'plasticboy/vim-markdown'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'vim-denops/denops.vim'
 Plug 'skanehira/denops-docker.vim'
 Plug 'webdevel/tabulous' " better tab names, ability to rename
