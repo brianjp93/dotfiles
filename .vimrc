@@ -25,6 +25,8 @@ Plug 'chrisbra/csv.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'plasticboy/vim-markdown'
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'sindrets/diffview.nvim'
 Plug 'vim-denops/denops.vim'
 Plug 'skanehira/denops-docker.vim'
 Plug 'webdevel/tabulous' " better tab names, ability to rename
