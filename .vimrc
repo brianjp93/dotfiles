@@ -24,6 +24,7 @@ Plug 'nvim-treesitter/playground'
 Plug 'chrisbra/csv.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'edgedb/edgedb-vim'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
