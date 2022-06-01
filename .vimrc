@@ -90,6 +90,9 @@ let maplocalleader = "\\"
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>vv :source $MYVIMRC<CR>
 nnoremap <leader>j :Rg "<cword>"
+" insert date
+nnoremap <F5> "=strftime("%FT%T%z")<CR>P
+inoremap <F5> <C-R>=strftime("%FT%T%z")<CR>
 " map emmet expand to alt-i
 inoremap <A-i> <esc>:call emmet#expandAbbr(3, "")<CR>i
 nnoremap <A-i> :call emmet#expandAbbr(3, "")<CR>
