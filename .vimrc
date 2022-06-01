@@ -214,7 +214,11 @@ vnoremap L $
 nnoremap H ^
 vnoremap H ^
 
-let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{**/migrations/**.py,**/.yarn/**,media/**, **/__pycache__/**,node_modules/*,*/node_modules/*,target/*,**/target/**,.git/*,**/*.pyc,**/tests/**}"'
+let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob
+\ "!{**/migrations/**.py,**/.yarn/**,media/**,
+\**/__pycache__/**,node_modules/*,*/node_modules/*,
+\target/*,**/target/**,.git/*,**/*.pyc,**/tests/**,**/yarn.lock,**/package-lock.json}"
+\'
 
 " ctrl-b to run python script
 " create a file called .condaenv
@@ -238,7 +242,7 @@ let g:enable_bold_font = 1
 "italics
 let g:enable_italic_font = 1
 "searching
-let g:rg_command = 'rg --vimgrep -S --trim --glob "!{**/migrations/**.py}"'
+let g:rg_command = 'rg --vimgrep -S --trim --glob "!{**/migrations/**.py,**/static/**,**/yarn.lock,package-lock.json}"'
 "vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal = 0
@@ -353,7 +357,7 @@ nnoremap <leader>c :call NextColor()<CR>
 
 "Rg customization
 command! -bang -nargs=* PRg
-\ call fzf#vim#grep('rg --column --no-heading --line-number --color=always --glob "!{**/*.po}" '.shellescape(<q-args>),
+\ call fzf#vim#grep('rg -S --column --no-heading --line-number --color=always --glob "!{**/*.po,**/static/**,**/yarn.lock,**/package-lock.json}" '.shellescape(<q-args>),
 \                 '-S',
 \                 <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'})
 \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
