@@ -144,7 +144,7 @@ nnoremap <silent> <leader>d :Gdiff<CR>
 nnoremap <silent> <leader>gb :Git blame<CR>
 nnoremap <silent> <leader>gl :Git log<CR>
 nnoremap <silent> <leader>gc :GBranches<CR>
-nnoremap <silent> <leader>vh :DiffviewFileHistory<CR>
+nnoremap <silent> <leader>vh :DiffviewFileHistory %<CR>
 
 "tabs
 nnoremap <leader>tn :tabnew<CR>
