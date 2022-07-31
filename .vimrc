@@ -6,7 +6,6 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ayu-theme/ayu-vim'
-Plug 'nightsense/carbonized'
 Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sainnhe/forest-night'
@@ -32,7 +31,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'vim-denops/denops.vim'
 Plug 'skanehira/denops-docker.vim'
 Plug 'webdevel/tabulous' " better tab names, ability to rename
-Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
 Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
@@ -140,8 +138,7 @@ autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> 
 nnoremap <silent> <leader>s :G<CR>
 nnoremap <silent> <leader>d :Gdiff<CR>
 nnoremap <silent> <leader>gb :Git blame<CR>
-nnoremap <silent> <leader>gl :Git log<CR>
-nnoremap <silent> <leader>gc :GBranches<CR>
+nnoremap <silent> <leader>gl :Git log<CR> nnoremap <silent> <leader>gc :GBranches<CR>
 nnoremap <silent> <leader>vh :DiffviewFileHistory %<CR>
 
 "tabs
@@ -149,9 +146,6 @@ nnoremap <leader>tn :tabnew<CR>
 nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>tl :tabm +1<CR>
 nnoremap <leader>th :tabm -1<CR>
-
-nnoremap <space>fe :set foldenable<cr>
-nnoremap <space>fn :set nofoldenable<cr>
 
 nnoremap <silent> <leader>tt :CocCommand terminal.Toggle<CR>
 
@@ -162,17 +156,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" jupyter / magma-nvim bindings
-
-nnoremap <expr>   <leader>r nvim_exec('MagmaEvaluateOperator', v:true)
-nnoremap <silent> <leader>rr :MagmaEvaluateLine<CR>
-xnoremap <silent> <leader>r  :<C-u>MagmaEvaluateVisual<CR>
-nnoremap <silent> <leader>rc :MagmaReevaluateCell<CR>
-nnoremap <silent> <leader>rd :MagmaDelete<CR>
-nnoremap <silent> <leader>ro :MagmaShowOutput<CR>
-
-let g:magma_automatically_open_output = v:true
 
 " visual multi maps
 let g:VM_maps = {}
@@ -323,14 +306,25 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-" press tab to iterate through autocomplete options
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
+inoremap <silent><expr> <TAB>
+\ coc#pum#visible() ? coc#pum#next(1):
+\ <SID>check_back_space() ? "\<Tab>" :
+\ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+function! s:check_back_space() abort
+let col = col('.') - 1
+return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
 " ------ CYCLE THEMES WITH <,-C> ------
-let s:mycolors = ['deus', 'gruvbox-material',  'everforest', 'onedark', 'carbonized-light']  " colorscheme names that we use to set color
+let s:mycolors = ['deus', 'gruvbox-material',  'everforest', 'onedark']  " colorscheme names that we use to set color
 
 function! NextColor()
   call s:NextColor()
