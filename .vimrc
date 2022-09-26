@@ -138,7 +138,8 @@ autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> 
 nnoremap <silent> <leader>s :G<CR>
 nnoremap <silent> <leader>d :Gdiff<CR>
 nnoremap <silent> <leader>gb :Git blame<CR>
-nnoremap <silent> <leader>gl :Git log<CR> nnoremap <silent> <leader>gc :GBranches<CR>
+nnoremap <silent> <leader>gl :Git log<CR>
+nnoremap <silent> <leader>gc :GBranches<CR>
 nnoremap <silent> <leader>vh :DiffviewFileHistory %<CR>
 
 "tabs
