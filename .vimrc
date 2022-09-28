@@ -43,7 +43,7 @@ Plug 'wellle/targets.vim' "new text objects
 Plug 'scrooloose/nerdtree' "file directory
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocomplete for many languages
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'yggdroot/indentline' "clean indentline
+Plug 'lukas-reineke/indent-blankline.nvim' "clean indentline
 Plug 'tpope/vim-surround' "surrounding text with quotes or tags etc...
 Plug 'tpope/vim-repeat' "enables repeat with . for some plugins
 Plug 'tpope/vim-dadbod' "helper for commmunicating with DBs
@@ -79,6 +79,13 @@ require'nvim-treesitter.configs'.setup {
 
 -- lualine setup
 require('lualine').setup()
+
+-- indent_blankline
+require("indent_blankline").setup {
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true,
+}
 EOF
 
 let mapleader = ","
@@ -232,10 +239,6 @@ let g:vim_markdown_conceal = 0
 let g:tagbar_autofocus=1
 let g:tagbar_sort=0
 let g:tagbar_foldlevel=0
-let g:indent_guides_auto_colors = 1
-let g:indentLine_enabled = 1
-let g:indentLine_fileTypeExclude = ["tagbar", "markdown", 'vimwiki', 'dbout']
-let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 let python_highlight_all=1
 au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
 
