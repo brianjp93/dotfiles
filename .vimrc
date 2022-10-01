@@ -79,13 +79,6 @@ require'nvim-treesitter.configs'.setup {
 
 -- lualine setup
 require('lualine').setup()
-
--- indent_blankline
-require("indent_blankline").setup {
-    space_char_blankline = " ",
-    show_current_context = true,
-    show_current_context_start = true,
-}
 EOF
 
 let mapleader = ","
@@ -207,6 +200,7 @@ vnoremap H ^
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob
 \ "!{**/migrations/**.py,**/.yarn/**,media/**,
 \**/__pycache__/**,node_modules/*,*/node_modules/*,
+\src/*,.deployment_virtualenv/*,
 \target/*,**/target/**,.git/*,**/*.pyc,**/tests/**,**/yarn.lock,**/package-lock.json}"
 \'
 
