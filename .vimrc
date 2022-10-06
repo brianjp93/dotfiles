@@ -200,7 +200,7 @@ vnoremap H ^
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob
 \ "!{**/migrations/**.py,**/.yarn/**,media/**,
 \**/__pycache__/**,node_modules/*,*/node_modules/*,
-\src/*,.deployment_virtualenv/*,
+\src/*,.deployment_virtualenv/*,**/*Zone.Identifier,
 \target/*,**/target/**,.git/*,**/*.pyc,**/tests/**,**/yarn.lock,**/package-lock.json}"
 \'
 
