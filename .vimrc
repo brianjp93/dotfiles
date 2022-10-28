@@ -60,12 +60,13 @@ Plug 'airblade/vim-gitgutter' "show git changes
 Plug 'tpope/vim-unimpaired' "searching easier
 Plug 'ryanoasis/vim-devicons' "enable icon font from nerd fonts
 Plug 'ap/vim-css-color' "show color when writing hex colors/rgb
+Plug 'stephenway/postcss.vim' "postcss
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'typescriptreact', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml'] } "js/ts/css/json/markdown... formatting
 call plug#end()
 
-let g:coc_global_extensions = ['coc-css', 'coc-db', 'coc-eslint', 'coc-html', 'coc-htmldjango', 'coc-jedi', 'coc-json', 'coc-lua', 'coc-marketplace', 'coc-prisma', 'coc-pyright', 'coc-rust-analyzer', 'coc-scssmodules', 'coc-sql', 'coc-terminal', 'coc-tsserver', 'coc-vetur', '@yaegassy/coc-tailwindcss3', 'coc-sqlfluff']
+let g:coc_global_extensions = ['coc-css', 'coc-db', 'coc-eslint', 'coc-html', 'coc-htmldjango', 'coc-jedi', 'coc-json', 'coc-lua', 'coc-marketplace', 'coc-prisma', 'coc-pyright', 'coc-rust-analyzer', 'coc-scssmodules', 'coc-sql', 'coc-terminal', 'coc-tsserver', 'coc-vetur', '@yaegassy/coc-tailwindcss3', 'coc-sqlfluff', 'coc-stylelintplus']
 
 
 lua <<EOF
