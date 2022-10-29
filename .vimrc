@@ -59,7 +59,8 @@ Plug 'jiangmiao/auto-pairs' "autoclose parens
 Plug 'airblade/vim-gitgutter' "show git changes
 Plug 'tpope/vim-unimpaired' "searching easier
 Plug 'ryanoasis/vim-devicons' "enable icon font from nerd fonts
-Plug 'ap/vim-css-color' "show color when writing hex colors/rgb
+Plug 'ziontee113/color-picker.nvim'
+Plug 'norcalli/nvim-colorizer.lua' "show colors
 Plug 'stephenway/postcss.vim' "postcss
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
@@ -68,6 +69,10 @@ call plug#end()
 
 let g:coc_global_extensions = ['coc-css', 'coc-db', 'coc-eslint', 'coc-html', 'coc-htmldjango', 'coc-jedi', 'coc-json', 'coc-lua', 'coc-marketplace', 'coc-prisma', 'coc-pyright', 'coc-rust-analyzer', 'coc-scssmodules', 'coc-sql', 'coc-terminal', 'coc-tsserver', 'coc-vetur', '@yaegassy/coc-tailwindcss3', 'coc-sqlfluff', 'coc-stylelintplus']
 
+" colorizer gets mad if this isn't set before it is set up
+if has('termguicolors')
+    set termguicolors
+endif
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
@@ -83,6 +88,30 @@ require'nvim-treesitter.configs'.setup {
 
 -- lualine setup
 require('lualine').setup()
+
+
+--color
+local opts = { noremap = true, silent = true }
+vim.keymap.set("n", "<space>c", "<cmd>PickColor<cr>", opts)
+
+-- vim.keymap.set("n", "your_keymap", "<cmd>ConvertHEXandRGB<cr>", opts)
+-- vim.keymap.set("n", "your_keymap", "<cmd>ConvertHEXandHSL<cr>", opts)
+
+require("color-picker").setup({ -- for changing icons & mappings
+  ["icons"] = { "ﱢ", "" },
+  ["border"] = "rounded", -- none | single | double | rounded | solid | shadow
+  ["keymap"] = { -- mapping example:
+    ["U"] = "<Plug>ColorPickerSlider5Decrease",
+    ["O"] = "<Plug>ColorPickerSlider5Increase",
+  },
+  ["background_highlight_group"] = "Normal", -- default
+  ["border_highlight_group"] = "FloatBorder", -- default
+  ["text_highlight_group"] = "Normal", --default
+})
+vim.cmd([[hi FloatBorder guibg=NONE]])
+
+-- colorizer
+require'colorizer'.setup()
 EOF
 
 let mapleader = ","
@@ -287,10 +316,6 @@ try
     set undofile
 catch
 endtry
-
-if has('termguicolors')
-    set termguicolors
-endif
 
 "Fix weird colors in tmux
 if &term =~ '256color'
