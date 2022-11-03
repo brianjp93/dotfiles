@@ -196,6 +196,7 @@ let g:VM_maps = {}
 let g:VM_maps['Find Under']         = '<C-f>'
 let g:VM_maps['Find Subword Under'] = '<C-f>'
 
+let g:NERDTreeMinimalMenu=1
 let NERDTreeIgnore = ['\.pyc$']
 " Open NERDTree in the directory of the current file (or /home if no file is open)
 nmap <silent> <C-n> :call NERDTreeToggleInCurDir()<CR>
