@@ -64,7 +64,7 @@ Plug 'norcalli/nvim-colorizer.lua' "show colors
 Plug 'stephenway/postcss.vim' "postcss
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
-  \ 'for': ['javascript', 'typescript', 'typescriptreact', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml'] } "js/ts/css/json/markdown... formatting
+  \ 'for': ['javascript', 'typescript', 'typescriptreact', 'less', 'scss', 'css', 'json', 'graphql', 'markdown', 'vue', 'yaml'] } "js/ts/css/json/markdown... formatting
 call plug#end()
 
 let g:coc_global_extensions = ['coc-css', 'coc-db', 'coc-eslint', 'coc-html', 'coc-htmldjango', 'coc-jedi', 'coc-json', 'coc-lua', 'coc-marketplace', 'coc-prisma', 'coc-pyright', 'coc-rust-analyzer', 'coc-scssmodules', 'coc-sql', 'coc-terminal', 'coc-tsserver', 'coc-vetur', '@yaegassy/coc-tailwindcss3', 'coc-sqlfluff', 'coc-stylelintplus']
@@ -137,7 +137,7 @@ autocmd FileType prisma nnoremap <buffer> <silent> <leader>p :CocCommand editor.
 autocmd FileType htmldjango noremap <buffer> <leader>p :CocCommand htmldjango.djhtml.format<cr>
 autocmd FileType typescriptreact,typescript,javascript nnoremap <buffer> <silent> <leader>p :Prettier<cr>:w<cr>:e<cr>
 " autocmd FileType rust nnoremap <buffer> <silent> <leader>b :RustRun<CR>
-autocmd FileType html,css noremap <buffer> <leader>p :!js-beautify % --replace --indent-size
+autocmd FileType html noremap <buffer> <leader>p :!js-beautify % --replace --indent-size
 "------ COC ------
 nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>gr <Plug>(coc-references)
@@ -244,16 +244,16 @@ let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob
 " ex: source "/Users/brian/miniconda3/etc/profile.d/conda.sh" && conda activate py310
 if filereadable('.condaenv')
     let g:conda_env = readfile('.condaenv')[0]
-    autocmd FileType python noremap <buffer> <C-b> :execute ":!" . g:conda_env . " && python %"<CR>
+    autocmd FileType python noremap <buffer> <A-b> :execute ":!" . g:conda_env . " && python %"<CR>
 else
-    autocmd FileType python noremap <buffer> <C-b> :execute ":! python %"<CR>
+    autocmd FileType python noremap <buffer> <A-b> :execute ":! python %"<CR>
 endif
 
-autocmd FileType r noremap <buffer> <C-b> :!Rscript %<CR>
-autocmd FileType rust noremap <buffer> <C-b> :!cargo run<CR>
+autocmd FileType r noremap <buffer> <A-b> :!Rscript %<CR>
+autocmd FileType rust noremap <buffer> <A-b> :!cargo run<CR>
 autocmd FileType rust noremap <buffer> <leader>b :!cargo run --bin %:t:r<CR>
-autocmd FileType javascript noremap <buffer> <C-b> :!node %<CR>
-autocmd FileType cpp noremap <buffer> <C-b> :!gcc % && ./a.out<CR>
+autocmd FileType javascript noremap <buffer> <A-b> :!node %<CR>
+autocmd FileType cpp noremap <buffer> <A-b> :!gcc % && ./a.out<CR>
 
 "bold
 let g:enable_bold_font = 1
