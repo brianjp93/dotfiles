@@ -28,8 +28,6 @@ Plug 'edgedb/edgedb-vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'vim-denops/denops.vim'
-Plug 'skanehira/denops-docker.vim'
 Plug 'webdevel/tabulous' " better tab names, ability to rename
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
