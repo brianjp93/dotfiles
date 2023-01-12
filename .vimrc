@@ -80,7 +80,7 @@ require'nvim-treesitter.configs'.setup {
     "css", "toml", "regex", "query", "make", "prisma"
   },
   highlight = {
-    enable = true
+    enable = false
   },
 }
 
