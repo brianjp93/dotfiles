@@ -31,7 +31,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'webdevel/tabulous' " better tab names, ability to rename
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
-Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
+" Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
 Plug 'jeetsukumaran/vim-pythonsense' "add function/class text object for python
 Plug 'szw/vim-maximizer' "f3 to maximize and reset windows
 Plug 'rust-lang/rust.vim' "rust language definitions
@@ -65,7 +65,7 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'typescriptreact', 'less', 'scss', 'css', 'json', 'graphql', 'markdown', 'vue', 'yaml'] } "js/ts/css/json/markdown... formatting
 call plug#end()
 
-let g:coc_global_extensions = ['coc-css', 'coc-db', 'coc-eslint', 'coc-html', 'coc-htmldjango', 'coc-jedi', 'coc-json', 'coc-lua', 'coc-marketplace', 'coc-prisma', 'coc-pyright', 'coc-rust-analyzer', 'coc-scssmodules', 'coc-sql', 'coc-terminal', 'coc-tsserver', 'coc-vetur', '@yaegassy/coc-tailwindcss3', 'coc-sqlfluff', 'coc-stylelintplus']
+let g:coc_global_extensions = ['coc-css', 'coc-fish', 'coc-db', 'coc-eslint', 'coc-html', 'coc-htmldjango', 'coc-json', 'coc-lua', 'coc-marketplace', 'coc-prisma', 'coc-pyright', 'coc-rust-analyzer', 'coc-scssmodules', 'coc-sql', 'coc-terminal', 'coc-tsserver', 'coc-vetur', '@yaegassy/coc-tailwindcss3', 'coc-sqlfluff', 'coc-stylelintplus']
 
 " colorizer gets mad if this isn't set before it is set up
 if has('termguicolors')
@@ -301,14 +301,12 @@ set inccommand=nosplit
 set hlsearch
 set clipboard=unnamed
 set ignorecase smartcase
-" set cursorline
 set encoding=utf-8
 set mouse=a
 set lazyredraw "don't redraw while executing macros
 set fileformats=unix,dos,mac
 autocmd BufNewFile,BufRead *.html set filetype=htmldjango
 syntax on
-" syntax sync fromstart
 
 try
     set undodir=~/temp/vimundo
