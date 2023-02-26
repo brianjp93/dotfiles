@@ -306,6 +306,7 @@ set mouse=a
 set lazyredraw "don't redraw while executing macros
 set fileformats=unix,dos,mac
 autocmd BufNewFile,BufRead *.html set filetype=htmldjango
+autocmd BufNewFile,BufRead *.js,*jsx set filetype=typescriptreact
 syntax on
 
 try
