@@ -10,7 +10,6 @@ Plug 'ajmwagar/vim-deus'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'sainnhe/forest-night'
 " END THEMES
-Plug 'mg979/vim-visual-multi' "multiple cursors
 Plug 'godlygeek/tabular' "Tabularize
 Plug 'tpope/vim-speeddating' "increment dates
 Plug 'vimwiki/vimwiki' "take some notes
@@ -23,7 +22,7 @@ Plug 'nvim-treesitter/playground'
 Plug 'chrisbra/csv.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'edgedb/edgedb-vim'
+" Plug 'edgedb/edgedb-vim'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
@@ -31,10 +30,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'webdevel/tabulous' " better tab names, ability to rename
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
-" Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
-Plug 'jeetsukumaran/vim-pythonsense' "add function/class text object for python
+Plug 'bronson/vim-trailing-whitespace' "show trailing whitespace
 Plug 'szw/vim-maximizer' "f3 to maximize and reset windows
-Plug 'rust-lang/rust.vim' "rust language definitions
 Plug 'mbbill/undotree' "undo tree
 Plug 'matze/vim-move' "move blocks of code
 Plug 'wellle/targets.vim' "new text objects
@@ -157,14 +154,14 @@ nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<CR>
 nnoremap <silent> <space>d :CocDiagnostics<CR>
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> if <Plug>(coc-funcobj-i)
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> if <Plug>(coc-funcobj-i)
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> af <Plug>(coc-funcobj-a)
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> af <Plug>(coc-funcobj-a)
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> ic <Plug>(coc-classobj-i)
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> ic <Plug>(coc-classobj-i)
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> ac <Plug>(coc-classobj-a)
-autocmd FileType typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> ac <Plug>(coc-classobj-a)
+autocmd FileType python,typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> if <Plug>(coc-funcobj-i)
+autocmd FileType python,typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> if <Plug>(coc-funcobj-i)
+autocmd FileType python,typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> af <Plug>(coc-funcobj-a)
+autocmd FileType python,typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> af <Plug>(coc-funcobj-a)
+autocmd FileType python,typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> ic <Plug>(coc-classobj-i)
+autocmd FileType python,typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> ic <Plug>(coc-classobj-i)
+autocmd FileType python,typescriptreact,typescript,javascript,rust,cpp,c xmap <buffer> ac <Plug>(coc-classobj-a)
+autocmd FileType python,typescriptreact,typescript,javascript,rust,cpp,c omap <buffer> ac <Plug>(coc-classobj-a)
 "------ END COC ------
 nnoremap <silent> <leader>s :G<CR>
 nnoremap <silent> <leader>d :Gdiff<CR>
@@ -188,11 +185,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" visual multi maps
-let g:VM_maps = {}
-let g:VM_maps['Find Under']         = '<C-f>'
-let g:VM_maps['Find Subword Under'] = '<C-f>'
 
 let g:NERDTreeMinimalMenu=1
 let NERDTreeIgnore = ['\.pyc$']
