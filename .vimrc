@@ -12,7 +12,6 @@ Plug 'sainnhe/forest-night'
 " END THEMES
 Plug 'godlygeek/tabular' "Tabularize
 Plug 'tpope/vim-speeddating' "increment dates
-Plug 'vimwiki/vimwiki' "take some notes
 Plug 'lervag/vimtex' "latex
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -62,7 +61,7 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'typescriptreact', 'less', 'scss', 'css', 'json', 'graphql', 'markdown', 'vue', 'yaml'] } "js/ts/css/json/markdown... formatting
 call plug#end()
 
-let g:coc_global_extensions = ['coc-css', 'coc-fish', 'coc-db', 'coc-eslint', 'coc-html', 'coc-htmldjango', 'coc-json', 'coc-lua', 'coc-marketplace', 'coc-prisma', 'coc-pyright', 'coc-rust-analyzer', 'coc-scssmodules', 'coc-sql', 'coc-terminal', 'coc-tsserver', '@yaegassy/coc-volar', '@yaegassy/coc-tailwindcss3', 'coc-sqlfluff', 'coc-stylelintplus']
+let g:coc_global_extensions = ['coc-css', 'coc-fish', 'coc-db', 'coc-eslint', 'coc-html', 'coc-htmldjango', 'coc-json', 'coc-lua', 'coc-marketplace', 'coc-prisma', 'coc-pyright', 'coc-rust-analyzer', 'coc-scssmodules', 'coc-sql', 'coc-terminal', 'coc-tsserver', '@yaegassy/coc-volar', '@yaegassy/coc-tailwindcss3', 'coc-sqlfluff', 'coc-stylelintplus', '@yaegassy/coc-ruff']
 
 " colorizer gets mad if this isn't set before it is set up
 if has('termguicolors')
