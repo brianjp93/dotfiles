@@ -126,7 +126,7 @@ nnoremap <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 nnoremap <leader>hu :GitGutterUndoHunk<CR>
 "reformat python code with ,-b
 autocmd FileType python nnoremap <buffer> <silent> <leader>p :w<cr>:!black %<cr>:e<cr>
-autocmd FileType rust nnoremap <buffer> <silent> <leader>p :RustFmt<cr>
+autocmd FileType rust nnoremap <buffer> <silent> <leader>p :!rustfmt %<cr>
 autocmd FileType prisma nnoremap <buffer> <silent> <leader>p :CocCommand editor.action.formatDocument<cr>
 autocmd FileType htmldjango noremap <buffer> <leader>p :CocCommand htmldjango.djhtml.format<cr>
 autocmd FileType typescriptreact,typescript,javascript nnoremap <buffer> <silent> <leader>p :Prettier<cr>:w<cr>:e<cr>
@@ -224,6 +224,7 @@ let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob
 \ "!{**/migrations/**.py,**/.yarn/**,media/**,
 \**/__pycache__/**,node_modules/*,*/node_modules/*,
 \.next/**/*,.deployment_virtualenv/*,**/*Zone.Identifier,
+\.mypy_cache/**,
 \target/*,**/target/**,.git/*,**/*.pyc,**/tests/**,**/yarn.lock,**/package-lock.json}"
 \'
 
@@ -290,7 +291,7 @@ set smarttab
 set incsearch
 set inccommand=nosplit
 set hlsearch
-set clipboard=unnamed
+set clipboard=unnamedplus
 set ignorecase smartcase
 set encoding=utf-8
 set mouse=a
