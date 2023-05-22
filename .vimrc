@@ -21,6 +21,8 @@ Plug 'nvim-treesitter/playground'
 Plug 'chrisbra/csv.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'plasticboy/vim-markdown'
+" treesitter has prisma, but syntax highlighting doesn't work?
+Plug 'prisma/vim-prisma'
 " Plug 'edgedb/edgedb-vim'
 
 Plug 'nvim-lua/plenary.nvim'
@@ -225,7 +227,7 @@ let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob
 \**/__pycache__/**,node_modules/*,*/node_modules/*,
 \.next/**/*,.deployment_virtualenv/*,**/*Zone.Identifier,
 \.mypy_cache/**,
-\target/*,**/target/**,.git/*,**/*.pyc,**/tests/**,**/yarn.lock,**/package-lock.json}"
+\target/*,**/target/**,.git/*,**/*.pyc,**/yarn.lock,**/package-lock.json}"
 \'
 
 " ctrl-b to run python script
