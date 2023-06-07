@@ -46,7 +46,7 @@ Plug 'tpope/vim-dadbod' "helper for commmunicating with DBs
 Plug 'kristijanhusak/vim-dadbod-ui' "dadbod ui
 Plug 'mattn/emmet-vim' "emmet for HTML tags
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "fuzzy finder for files
-Plug 'junegunn/fzf.vim' "for some reason i need this idk
+Plug 'junegunn/fzf.vim', {'commit': 'dc71692255b62d1f67dc55c8e51ab1aa467b1d46'} "for some reason i need this idk
 Plug 'jremmen/vim-ripgrep' "fast searching
 Plug 'tpope/vim-commentary' "easy commenting
 Plug 'tpope/vim-fugitive' "git integration
