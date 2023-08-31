@@ -15,7 +15,6 @@ Plug 'tpope/vim-speeddating' "increment dates
 Plug 'lervag/vimtex' "latex
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
 
 " syntax not handled by treesitter
 Plug 'chrisbra/csv.vim'
