@@ -130,7 +130,7 @@ nnoremap <leader>hu :GitGutterUndoHunk<CR>
 autocmd FileType python nnoremap <buffer> <silent> <leader>p :w<cr>:!black %<cr>:e<cr>
 autocmd FileType rust nnoremap <buffer> <silent> <leader>p :!rustfmt %<cr>
 autocmd FileType prisma nnoremap <buffer> <silent> <leader>p :CocCommand editor.action.formatDocument<cr>
-autocmd FileType htmldjango noremap <buffer> <leader>p :CocCommand htmldjango.djhtml.format<cr>
+autocmd FileType htmldjango noremap <buffer> <silent> <leader>p :!djlint % --reformat<cr>
 autocmd FileType typescriptreact,typescript,javascript nnoremap <buffer> <silent> <leader>p :Prettier<cr>:w<cr>:e<cr>
 " autocmd FileType rust nnoremap <buffer> <silent> <leader>b :RustRun<CR>
 autocmd FileType html noremap <buffer> <leader>p :!js-beautify % --replace --indent-size
