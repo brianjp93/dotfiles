@@ -26,7 +26,6 @@ Plug 'prisma/vim-prisma'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'webdevel/tabulous' " better tab names, ability to rename
 Plug 'stsewd/fzf-checkout.vim' "fuzzy git checkout
 Plug 'tweekmonster/django-plus.vim'
@@ -58,11 +57,11 @@ Plug 'ziontee113/color-picker.nvim'
 Plug 'norcalli/nvim-colorizer.lua' "show colors
 Plug 'stephenway/postcss.vim' "postcss
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install',
-  \ 'for': ['javascript', 'typescript', 'typescriptreact', 'less', 'scss', 'css', 'json', 'graphql', 'markdown', 'vue', 'yaml'] } "js/ts/css/json/markdown... formatting
+  \ 'do': 'npm install --force',
+  \ 'for': ['javascript', 'typescript', 'typescriptreact', 'less', 'scss', 'css', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'astro'] } "js/ts/css/json/markdown... formatting
 call plug#end()
 
-let g:coc_global_extensions = ['coc-css', 'coc-fish', 'coc-db', 'coc-eslint', 'coc-html', 'coc-htmldjango', 'coc-json', 'coc-lua', 'coc-marketplace', 'coc-prisma', 'coc-pyright', 'coc-rust-analyzer', 'coc-scssmodules', 'coc-sql', 'coc-terminal', 'coc-tsserver', '@yaegassy/coc-volar', '@yaegassy/coc-tailwindcss3', 'coc-sqlfluff', 'coc-stylelintplus', '@yaegassy/coc-ruff']
+let g:coc_global_extensions = ['coc-css', 'coc-fish', 'coc-db', 'coc-eslint', 'coc-html', 'coc-htmldjango', 'coc-json', 'coc-lua', 'coc-marketplace', 'coc-prisma', 'coc-pyright', 'coc-rust-analyzer', 'coc-scssmodules', 'coc-sql', 'coc-terminal', 'coc-tsserver', '@yaegassy/coc-volar', '@yaegassy/coc-tailwindcss3', 'coc-sqlfluff', 'coc-stylelintplus', '@yaegassy/coc-ruff', '@yaegassy/coc-astro']
 
 " colorizer gets mad if this isn't set before it is set up
 if has('termguicolors')
@@ -74,16 +73,16 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "javascript", "typescript", "tsx", "html", "python",
     "bash", "ql", "rust", "cpp", "json", "jsonc", "vue", "yaml",
-    "css", "toml", "regex", "query", "make", "prisma"
+    "css", "toml", "regex", "query", "make", "prisma", "astro"
   },
   highlight = {
-    enable = false
+    enable = true,
+    disable = { "" },
+    additional_vim_regex_highlighting = true,
   },
 }
 
--- lualine setup
 require('lualine').setup()
-
 
 --color
 local opts = { noremap = true, silent = true }
@@ -91,6 +90,8 @@ vim.keymap.set("n", "<space>c", "<cmd>PickColor<cr>", opts)
 
 -- vim.keymap.set("n", "your_keymap", "<cmd>ConvertHEXandRGB<cr>", opts)
 -- vim.keymap.set("n", "your_keymap", "<cmd>ConvertHEXandHSL<cr>", opts)
+
+require("ibl").setup()
 
 require("color-picker").setup({ -- for changing icons & mappings
   ["icons"] = { "ﱢ", "" },
@@ -300,6 +301,7 @@ set lazyredraw "don't redraw while executing macros
 set fileformats=unix,dos,mac
 autocmd BufNewFile,BufRead *.html set filetype=htmldjango
 autocmd BufNewFile,BufRead *.js,*jsx set filetype=typescriptreact
+au! BufRead,BufNewFile *.astro set filetype=astro
 syntax on
 
 try
