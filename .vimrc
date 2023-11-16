@@ -74,7 +74,7 @@ require'nvim-treesitter.configs'.setup {
     "javascript", "typescript", "tsx", "html", "python",
     "bash", "ql", "rust", "cpp", "json", "jsonc", "vue", "yaml",
     "css", "toml", "regex", "query", "make", "prisma", "astro",
-    "htmldjango"
+    "htmldjango", "markdown"
   },
   highlight = {
     enable = true,
