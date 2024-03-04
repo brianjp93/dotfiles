@@ -1,8 +1,8 @@
 # focus window
-alt + cmd - h : yabai -m window --focus west
-alt + cmd - j : yabai -m window --focus south
-alt + cmd - k : yabai -m window --focus north
-alt + cmd - l : yabai -m window --focus east
+alt + cmd - h : yabai -m window --focus west || yabai -m display --focus west
+alt + cmd - j : yabai -m window --focus south || yabai -m display --focus south
+alt + cmd - k : yabai -m window --focus north || yabai -m display --focus north
+alt + cmd - l : yabai -m window --focus east || yabai -m display --focus east
 
 # move window to other screens or positions?
 cmd + shift - h : yabai -m window --swap west  || $(yabai -m window --display west; yabai -m display --focus west)
