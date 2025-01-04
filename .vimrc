@@ -92,7 +92,18 @@ vim.keymap.set("n", "<space>c", "<cmd>PickColor<cr>", opts)
 -- vim.keymap.set("n", "your_keymap", "<cmd>ConvertHEXandRGB<cr>", opts)
 -- vim.keymap.set("n", "your_keymap", "<cmd>ConvertHEXandHSL<cr>", opts)
 
-require("ibl").setup()
+local highlight = {
+    "CursorColumn",
+    "Whitespace",
+}
+require("ibl").setup {
+  scope = { enabled = false },
+  indent = { highlight = highlight, char = "" },
+  whitespace = {
+    highlight = highlight,
+    remove_blankline_trail = false,
+  },
+}
 
 require("color-picker").setup({ -- for changing icons & mappings
   ["icons"] = { "ﱢ", "" },
