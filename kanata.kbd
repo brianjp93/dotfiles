@@ -57,7 +57,7 @@
 (deflayer qwerty
   grv   1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab   q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @cesc a    s    d    f    g    h    j    k    l    ;    @ham ret
+  @cesc @al1 s    d    f    g    h    j    k    l    ;    @ham ret
   lsft  z    x    c    v    b    n    m    ,    .    /    rsft
   lctl  lmet lalt           spc            ralt rmet rctl
 )
@@ -91,73 +91,8 @@
 ;; e.g. in the `anm` alias. However, an alias can only refer to another alias
 ;; that has been defined before it in the file.
 (defalias
-  ;; aliases to change the base layer to qwerty or dvorak
-  qwr (layer-switch qwerty)
-
-  ;; Aliases for layer "toggling". It's not quite toggling because the layer
-  ;; will be active while the key is held and deactivated when the key is
-  ;; released. An alternate action name you can use is layer-while-held.
-  ;; However, the rest of this document will use The term "toggle" for brevity.
-  arr (layer-toggle arrows)
   lay1 (layer-toggle layer1)
-
-  ;; tap-hold aliases with tap for dvorak key, and hold for toggle layers
-  ;; WARNING(Linux only): key repeat with tap-hold can behave unexpectedly.
-  ;; For full context, see https://github.com/jtroo/kanata/discussions/422
-  ;;
-  ;; tap-hold parameter order:
-  ;; 1. tap timeout
-  ;; 2. hold timeout
-  ;; 3. tap action
-  ;; 4. hold action
-  ;;
-  ;; The hold timeout is the number of milliseconds after which the hold action
-  ;; will activate.
-  ;;
-  ;; The tap timeout is best explained in a roundabout way. When you press and
-  ;; hold a standard key on your keyboard (e.g. 'a'), your operating system will
-  ;; read that and keep sending 'a' to the active application. To be able to
-  ;; replicate this behaviour with a tap-hold key, you must press-release-press
-  ;; the key within the tap timeout window (number is milliseconds). Simply
-  ;; holding the key results in the hold action activating, which is why you
-  ;; need to double-press for the tap action to stay pressed.
-  ;;
-  ;; There are two additional versions of tap-hold available:
-  ;; 1. tap-hold-press: if there is a key press, the hold action is activated
-  ;; 2. tap-hold-release: if there is a press and release of another key, the
-  ;; hold action is activated
-  ;;
-  ;; These versions are useful if you don't want to wait for the whole hold
-  ;; timeout to activate, but want to activate the hold action immediately
-  ;; based on the next key press or press and release of another key. These
-  ;; versions might be great to implement home row mods.
-  ;;
-  ;; If you come from kmonad, tap-hold-press and tap-hold-release are similar
-  ;; to tap-hold-next and tap-hold-next-release, respectively. If you know
-  ;; the underlying keyberon crate, tap-hold-press is the HoldOnOtherKeyPress
-  ;; and tap-hold-release is the PermissiveHold configuration.
-  ;; anm (tap-hold 200 200 a @num)   ;; tap: a      hold: numbers layer
-  oar (tap-hold 200 200 o @arr)   ;; tap: o      hold: arrows layer
-  l1  (tap-hold 200 200 caps @lay1) ;; tap: bspc   hold: layer1 layer
-
-  ;; There are additional variants of tap-hold-press and tap-hold-release that
-  ;; activate the timeout action (the 5th parameter) when the action times out
-  ;; as opposed to the hold action being activated by other keys.
-
-  ;; tap: o    hold: arrows layer    timeout: backspace
-  oat (tap-hold-press-timeout   200 200 o @arr bspc)
-  ;; tap: e    hold: chords layer    timeout: esc
-
-  ;; There is another variant of `tap-hold-release` that takes a 5th parameter
-  ;; that is a list of keys that will trigger an early tap.
-
-  ;; tap: u    hold: misc layer      early tap if any of: (a o e) are pressed
-  ;; umk (tap-hold-release-keys 200 200 u @msc (a o e))
-
-  ;; tap: u    hold: misc layer      always tap if any of: (a o e) are pressed
-  ;; uek (tap-hold-except-keys 200 200 u @msc (a o e))
-
-  ;; tap for capslk, hold for lctl
+  al1  (tap-hold 200 200 a @lay1) ;; tap: bspc   hold: layer1 layer
   cap (tap-hold 200 200 caps lctl)
 
   ;; Below is an alias for the `multi` action which executes multiple actions
@@ -168,14 +103,6 @@
   ;; press right-alt while also toggling to the `ralted` layer. The utility of
   ;; this is better revealed if you go see `ralted` and its aliases.
   ;; ralt (multi ralt (layer-toggle ralted))
-)
-
-(deflayer arrows
-  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _
-  _    _    _    _    _    _    _    pgup up   pgdn _    _    _    _
-  _    _    _    _    _    _    home left down rght end  _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _
 )
 
 (deflayer layer1
