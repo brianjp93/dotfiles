@@ -1,10 +1,3 @@
-zmodload zsh/terminfo
-typeset -gA key
-key=(
-    Up        "${terminfo[kcuu1]}"
-    Down      "${terminfo[kcud1]}"
-)
-
 autoload -Uz compinit && compinit
 # Case-insensitive (all), partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
