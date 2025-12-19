@@ -1,13 +1,15 @@
 # shell chat
 # requires `uv tool install llm`
+# llm install llm-gemini
+# llm keys set gemini
 llmcall() {
   local system_prompt="You are a helpful assistant running in a shell. $(uname -a)
 Shell: $SHELL"
   # Check if there is piped input
   if [[ ! -t 0 ]]; then
-    cat - | llm -m "$1" --system "$system_prompt" "${@:2}"
+    cat - | llm "${@:2}" -m "$1" --system "$system_prompt"
   else
-    llm -m "$1" --system "$system_prompt" "${@:2}"
+    llm "${@:2}" -m "$1" --system "$system_prompt"
   fi
 }
 chat() {
