@@ -12,7 +12,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt           comp rctl
+  lctl lmet lalt           spc            ralt           menu rctl
 )
 
 (deflayer qwerty
@@ -20,7 +20,7 @@
   tab   q    w    e    r    t    y    u    i    o     p    [    ]    \
   @cesc @al1 s    d    f    g    h    j    k    l     ;    @ham ret
   lsft  z    x    c    v    b    n    m    ,    .     /    rsft
-  lctl  lmet lalt           spc            ralt            comp rctl
+  lctl  lmet lalt           spc            ralt            menu rctl
 )
 
 (defvar
