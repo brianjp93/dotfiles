@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Toggle the layout on the current active workspace between dwindle and scrolling
+WS_ID=$(hyprctl activeworkspace -j | jq -r '.id')
+WS_NAME=$(hyprctl activeworkspace -j | jq -r '.name')
+if [ "$WS_ID" -lt 0 ] 2>/dev/null; then
+  ACTIVE_WORKSPACE="name:$WS_NAME"
+else
+  ACTIVE_WORKSPACE="$WS_NAME"
+fi
+CURRENT_LAYOUT=$(hyprctl activeworkspace -j | jq -r '.tiledLayout')
+
+case "$CURRENT_LAYOUT" in
+  dwindle) NEW_LAYOUT=scrolling ;;
+  *) NEW_LAYOUT=dwindle ;;
+esac
+
+hyprctl keyword workspace "$ACTIVE_WORKSPACE, layout:$NEW_LAYOUT"
+notify-send "󱂬    Previous Layout $CURRENT_LAYOUT Workspace "$ACTIVE_WORKSPACE" layout set to $NEW_LAYOUT"

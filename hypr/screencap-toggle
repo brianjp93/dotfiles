@@ -1,0 +1,19 @@
+#!/bin/bash
+
+PIDFILE="/tmp/screencap-wl-screenrec.pid"
+OUTPUT_DIR="$HOME/Videos"
+
+if [[ -f "$PIDFILE" ]] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then
+  kill -INT "$(cat "$PIDFILE")"
+  rm -f "$PIDFILE"
+  pkill -RTMIN+8 waybar
+  notify-send "Screen recording saved" -t 2000
+else
+  FILENAME="$OUTPUT_DIR/screencap-$(date +'%Y-%m-%d_%H-%M-%S').mp4"
+  REGION="$(slurp)"
+  [[ -z "$REGION" ]] && exit 1
+  LIBVA_DRIVER_NAME=radeonsi wl-screenrec -g "$REGION" -m 24 --codec auto -f "$FILENAME" &
+  echo $! > "$PIDFILE"
+  pkill -RTMIN+8 waybar
+  notify-send "Screen recording started" -t 2000
+fi
