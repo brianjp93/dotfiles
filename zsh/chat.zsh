@@ -2,6 +2,10 @@
 # requires `uv tool install llm`
 # llm install llm-gemini
 # llm keys set gemini
+#
+# update model with
+# > uv tool update llm
+# > llm models
 llmcall() {
   local system_prompt="You are a helpful assistant running in a shell. $(uname -a)
 Shell: $SHELL
@@ -15,8 +19,8 @@ Give responses which answer the question succinctly. Do not give long explanatio
   fi
 }
 chat() {
-  llmcall gemini-3-flash-preview "$@"
+  llmcall gemini-3.5-flash "$@"
 }
 think() {
-  llmcall gemini-3-pro-preview "$@"
+  llmcall gemini-3.1-pro-preview "$@"
 }
